@@ -46,8 +46,6 @@ available methods, event callbacks, and best practices for implementation.
 
 ---
 
-## What is Autosuggest JS SDK?
-
 ## What is the Autosuggest JS SDK?
 
 The **Autosuggest JS SDK** is a JavaScript library that enables real-time
