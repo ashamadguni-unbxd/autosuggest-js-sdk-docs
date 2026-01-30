@@ -17,8 +17,3 @@ All configuration options are provided during SDK initialization and are optiona
 
 ## Table of Contents
 {: .no_toc }
-
-- [Core Configuration](#core-configuration)
-- [DOM Configuration](#dom-configuration)
-- [Behavior Configuration](#behavior-configuration)
-- [Customization](#customization)
