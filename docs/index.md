@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Autosuggest JS SDK Documentation
+title: Introduction
 description: Autosuggest JS SDK Documentation
 nav_order: 1
 permalink: /
