@@ -13,11 +13,3 @@ Autosuggest JS SDK configurations allow you to control authentication, DOM attac
 All configuration options are provided during SDK initialization and are optional unless explicitly stated.
 {: .fs-5 .fw-300 }
 
----
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
