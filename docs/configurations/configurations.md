@@ -15,5 +15,9 @@ All configuration options are provided during SDK initialization and are optiona
 
 ---
 
-## Table of Contents
-{: .no_toc }
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
