@@ -5,7 +5,6 @@ description: Autosuggest JS SDK Documentation
 nav_order: 1
 permalink: /
 ---
-
 #Autosuggest SDK
 
 A JavaScript SDK for building fast, flexible, and customizable autosuggest
