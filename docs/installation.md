@@ -21,9 +21,11 @@ This section describes the steps required to include the Autosuggest JS SDK and 
 
 ## Prerequisite
 
-Please complete the Self Serve FTU (First-Time User) flow for sign up, site creation, feed upload, and relevancy configuration.
+Before proceeding with the installation of the Autosuggest JS SDK, you must complete the initial onboarding and configuration of your Unbxd account through the Self Serve Dashboard. This setup includes account registration, site creation, feed upload, and relevancy configuration, which are required for the SDK to function correctly.
 
+Detailed guidance on completing the onboarding process is available in the Self Serve Dashboard documentation:
 [Self Serve Dashboard Documentation](https://unbxd.com/docs/site-search/integration-documentation/onboarding-flow/)
+
 
 ---
 
