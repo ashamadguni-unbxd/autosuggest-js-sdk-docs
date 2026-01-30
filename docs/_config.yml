@@ -35,4 +35,5 @@ gh_edit_view_mode: "edit"
 
 plugins:
   - jekyll-remote-theme
+  - jekyll-include-cache
     
