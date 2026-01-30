@@ -9,19 +9,16 @@ permalink: /docs/configurations/
 # Configurations
 {: .fs-9 }
 
-Unbxd Autosuggest SDK configurations allow you to control authentication, input behavior, suggestion rendering, API responses, and user interaction patterns. These options help you tailor the autosuggest experience to match your application’s UI requirements and performance needs.
+Autosuggest JS SDK configurations allow you to control authentication, DOM attachment, runtime behavior, and UI customization.  
+All configuration options are provided during SDK initialization and are optional unless explicitly stated.
 {: .fs-5 .fw-300 }
 
 ---
 
 ## Table of Contents
-{: .text-delta }
+{: .no_toc }
 
-- [Authentication](configurations/authentication)
-- [Search Input](configurations/search-input)
-- [Suggestions](configurations/suggestions)
-- [Templates](configurations/templates)
-- [Debounce & Thresholds](configurations/debounce)
-- [API Configuration](configurations/api)
-- [Callbacks & Events](configurations/callbacks)
-- [Error Handling](configurations/error-handling)
+- [Core Configuration](#core-configuration)
+- [DOM Configuration](#dom-configuration)
+- [Behavior Configuration](#behavior-configuration)
+- [Customization](#customization)
