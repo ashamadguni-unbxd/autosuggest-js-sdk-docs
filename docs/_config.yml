@@ -1,6 +1,6 @@
 title: Autosuggest JS SDK
 description: JavaScript SDK for Autosuggest by Unbxd
-# remote_theme: mmistakes/minimal-mistakes@4.26.2
+theme: jekyll-theme-cayman
 
 url: https://unbxd.github.io
 baseurl: /autosuggest-js-sdk-docs
