@@ -24,8 +24,6 @@ powered by Unbxd.
 
 ## Introduction
 
-## Introduction
-
 The **Autosuggest JS SDK** is a lightweight JavaScript library that enables
 real-time search suggestions as users type into a search input. It helps guide
 users toward relevant queries and products by dynamically presenting suggestions
@@ -50,30 +48,35 @@ available methods, event callbacks, and best practices for implementation.
 
 ## What is Autosuggest JS SDK?
 
-Autosuggest provides dynamic suggestions that appear while users type in a
-search box. These suggestions help users refine their intent and find what
-they are looking for faster.
+## What is the Autosuggest JS SDK?
 
-With the Autosuggest JS SDK, you can easily enable:
+The **Autosuggest JS SDK** is a JavaScript library that enables real-time
+suggestions in a search input as users type. It helps guide users toward relevant
+queries by dynamically displaying suggestions based on partial input.
+
+The SDK supports multiple suggestion types, allowing applications to present
+contextual and relevant options during the search interaction. By surfacing
+suggestions early, Autosuggest improves search usability and reduces the effort
+required to complete a query.
+
+Supported suggestion types include:
 
 - Keyword and query suggestions
-- Popular and trending search terms
-- In-field suggestions while typing
-- Promoted or curated suggestions
+- Popular search terms
+- In-field suggestions during typing
+- Promoted suggestions
 - Top search queries
-
-All suggestions are powered by Unbxd’s backend intelligence and delivered with
-low latency for a smooth user experience.
 
 ---
 
 ## Why use the Autosuggest JS SDK?
 
-- ⚡ Lightweight and fast — no build tools required
-- 🔌 Easy to integrate using plain JavaScript
-- 🎛 Fully configurable behavior and callbacks
-- 🎯 Improves search relevance and user engagement
-- 🧩 Works with any frontend stack or framework
+- **Lightweight** — Designed with a minimal footprint to ensure fast load times and optimal performance.
+- **Simple integration** — Easily integrates with plain JavaScript and does not require a build step or additional tooling.
+- **Configurable** — Offers flexible configuration options along with event callbacks to customize behavior and UI interactions.
+- **Improves search usability** — Enhances the search experience by helping users refine queries efficiently as they type.
+- **Framework-agnostic** — Works seamlessly with any frontend framework or vanilla JavaScript applications.
+
 
 ---
 
