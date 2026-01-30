@@ -29,17 +29,14 @@ Detailed guidance on completing the onboarding process is available in the Self 
 
 ---
 
-## Include the SDK
+## SDK Integration
 
-Include the Autosuggest JS SDK in your HTML file using the following script tag:
+Include the Vanilla JavaScript Search library by adding the following script tag to your HTML file:
 
-    <script src="https://libraries.unbxdapi.com/search-sdk/v1/autosuggest.min.js"></script>
+<script src="https://libraries.unbxdapi.com/search-sdk/v<<latest-version>>/vanillaSearch.min.js" type="text/javascript"></script>
 
----
+The latest available version of the library can be identified from the npm repository for the Search JS library or from the official ChangeLog.
 
-## Include Default Styles
+To apply the default Search UI styles, include the corresponding stylesheet using the following link tag:
 
-To apply the default Autosuggest UI styles, include the SDK stylesheet:
-
-    <link rel="stylesheet" href="https://libraries.unbxdapi.com/search-sdk/v1/autosuggest.min.css" />
-
+<link rel="stylesheet" type="text/css" href="https://libraries.unbxdapi.com/search-sdk/v<<latest-version>>/vanillaSearch.min.css" />
