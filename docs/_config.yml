@@ -36,3 +36,7 @@ gh_edit_view_mode: "edit"
 just_the_docs:
   custom_css:
     - assets/css/custom.scss
+
+plugins:
+  - jekyll-remote-theme
+    
