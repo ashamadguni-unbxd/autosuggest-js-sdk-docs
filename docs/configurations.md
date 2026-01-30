@@ -1,202 +1,121 @@
----
-layout: default
-title: Configuration
-nav_order: 3
----
+# Configurations
 
-# Configuration
-
-This section describes the configuration options available in the Unbxd Autosuggest JavaScript SDK.  
-The SDK is initialized using a configuration object that controls authentication, DOM binding, request behavior, and rendering of autosuggestions.
-
-Each configuration property is documented with its data type, requirement level, default value, and usage example to ensure correct and consistent integration.
+Use the configuration object to initialize the Autosuggest SDK.  
+Pass the Site Key and API Key obtained from the Unbxd Console in the `siteKey` and `apiKey` properties.  
+All configuration options are optional unless explicitly marked as required.
 
 ---
 
-## Basic Configuration
+## siteKey `String`
 
-Basic configuration properties are essential for enabling autosuggest functionality.  
-These options allow the SDK to authenticate with Unbxd services and attach autosuggestions to a search input element on the page.
+The unique Site Key assigned by Unbxd for each site created in the Unbxd Console.  
+This key is required to authenticate Autosuggest API requests.
 
----
+Refer to the **Site Setup** section in the documentation for steps to retrieve your Site Key.
 
-### siteKey
-
-**Type:** String  
-**Required:** Yes  
-**Default:** `""`
-
-The `siteKey` uniquely identifies your Unbxd account and is required for all Autosuggest API requests.  
-This value is provided during site onboarding and must be included during SDK initialization.
-
-**Example:**
-```
-ss-unbxd-aus-demo-fashion831421736321881
-```
-
-**Usage:**
+### Default Value
 ```js
-const autosuggest = new Autosuggest({
-  siteKey: "ss-unbxd-aus-demo-fashion831421736321881"
-});
+siteKey: ""
 ```
 
 ---
 
-### apiKey
+## apiKey `String`
 
-**Type:** String  
-**Required:** Yes  
-**Default:** `""`
+The API Key associated with your Unbxd site.  
+This key is required for authorization and must be provided during SDK initialization.
 
-The `apiKey` is used to authorize requests made by the Autosuggest SDK.  
-It must correspond to the configured Unbxd site and should be kept secure.
+Ensure that the API Key corresponds to the configured Site Key.
 
-**Example:**
-```
-1ccbb7fcb0faf770d1c228be80ba16d9
-```
-
-**Usage:**
+### Default Value
 ```js
-const autosuggest = new Autosuggest({
-  apiKey: "your-api-key-here"
-});
+apiKey: ""
 ```
 
 ---
 
-### searchInput
+## searchInput `String | null`
 
-**Type:** String  
-**Required:** Yes  
-**Default:** `null`
+Specifies the CSS selector of the input element to which autosuggest functionality will be attached.  
+The SDK queries the DOM using this selector and binds autosuggest behavior to the matched element.
 
-A CSS selector that identifies the input element to which autosuggest behavior will be applied.  
-The SDK queries the DOM using this selector and binds input, focus, and keyboard events to the matched element.
-
-**Examples:**
-```
-".search-input"
-"#search-box"
-```
-
-**Usage:**
+### Default Value
 ```js
-const autosuggest = new Autosuggest({
-  searchInput: ".search-input"
-});
+searchInput: null
 ```
 
 ---
 
-### containerTag
+## containerTag `String`
 
-**Type:** String  
-**Required:** No  
-**Default:** `"div"`
+Defines the HTML tag used to create the autosuggestion container element.  
+This allows flexibility in choosing semantic markup based on layout or accessibility requirements.
 
-Specifies the HTML tag used to create the autosuggestion container element.  
-This allows flexibility in choosing semantic HTML elements based on layout requirements.
-
-**Usage:**
+### Default Value
 ```js
-const autosuggest = new Autosuggest({
-  containerTag: "section"
-});
+containerTag: "div"
 ```
 
 ---
 
-### attributes
-
-**Type:** Object  
-**Required:** No  
-**Default:** `{}`
+## attributes `Object`
 
 Defines HTML attributes applied to the autosuggestion container element.  
-This can be used to assign CSS classes, element IDs, or custom data attributes for styling, testing, or analytics.
+This can be used to assign CSS classes, IDs, or custom data attributes for styling, testing, or analytics.
 
-Array values (such as `class`) are handled appropriately by the SDK.
+Array values (for example, `class`) are supported and handled internally by the SDK.
 
-**Usage:**
+### Default Value
 ```js
-const autosuggest = new Autosuggest({
-  attributes: {
-    class: ["unbxd-autosuggest", "search-suggestions"],
-    id: "autosuggest-container",
-    "data-testid": "autosuggest"
-  }
-});
+attributes: {}
 ```
 
 ---
 
-### debounceDelay
+## debounceDelay `Number`
 
-**Type:** Number  
-**Required:** No  
-**Default:** `0`
+Specifies the delay (in milliseconds) before triggering an Autosuggest API request after the user stops typing.  
+This helps reduce unnecessary API calls and improves overall performance.
 
-Specifies the delay (in milliseconds) before triggering the Autosuggest API request after the user stops typing.  
-This option helps reduce the number of API calls and improves performance.
+A value of `0` disables debouncing.
 
-A value of `0` disables debouncing and triggers requests immediately after input changes.
-
-**Usage:**
+### Default Value
 ```js
-const autosuggest = new Autosuggest({
-  debounceDelay: 300
-});
+debounceDelay: 0
 ```
 
 ---
 
-### minChars
+## minChars `Number`
 
-**Type:** Number  
-**Required:** No  
-**Default:** `3`
+Defines the minimum number of characters required in the search input before autosuggestions are fetched.  
+The API is triggered only when the input length meets or exceeds this value.
 
-Defines the minimum number of characters required in the search input before the Autosuggest API is invoked.  
-Requests are triggered only when the input length is greater than or equal to this value.
-
-**Usage:**
+### Default Value
 ```js
-const autosuggest = new Autosuggest({
-  minChars: 2
-});
+minChars: 3
 ```
 
 ---
 
-### template
+## template `Function`
 
-**Type:** Function  
-**Required:** No  
-**Default:** `AutosuggestionBoxTemplate`
-
-Allows customization of the autosuggestion UI by providing a custom template function.  
+Allows customization of the autosuggestion UI by providing a custom rendering function.  
 The function receives structured suggestion data and must return a valid HTML string.
 
-If no custom template is provided, the SDK renders the default autosuggestion layout.
+If not provided, the default Autosuggest template is used.
 
-**Usage:**
+### Default Value
 ```js
-function CustomTemplate(props) {
-  return `<div>Custom Autosuggest UI</div>`;
-}
-
-const autosuggest = new Autosuggest({
-  template: CustomTemplate
-});
+template: AutosuggestionBoxTemplate
 ```
 
-**Template Properties:**
-- `POPULAR_PRODUCTS` – Popular product suggestions
-- `IN_FIELD` – In-field suggestions
-- `KEYWORD_SUGGESTION` – Keyword-based suggestions
-- `PROMOTED_SUGGESTION` – Promoted suggestions
-- `TOP_SEARCH_QUERIES` – Frequently searched queries
+### Template Data
+The template function receives the following properties:
+- `POPULAR_PRODUCTS`
+- `IN_FIELD`
+- `KEYWORD_SUGGESTION`
+- `PROMOTED_SUGGESTION`
+- `TOP_SEARCH_QUERIES`
 
 ---
