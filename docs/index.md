@@ -1,12 +1,18 @@
-# Autosuggest JS SDK Documentation
+---
+layout: default
+title: Autosuggest JS SDK Documentation
+description: Autosuggest JS SDK Documentation
+---
 
-A JavaScript SDK for building fast, flexible, and customizable autosuggest experiences using Unbxd.
+A JavaScript SDK for building fast, flexible, and customizable autosuggest
+experiences using Unbxd.
 
 ---
 
 ## What is Autosuggest JS SDK?
 
 The Autosuggest JS SDK helps you implement real-time search suggestions such as:
+
 - Keyword suggestions
 - Popular products
 - In-field suggestions
@@ -17,13 +23,14 @@ The Autosuggest JS SDK helps you implement real-time search suggestions such as:
 
 ## Quick Links
 
-- [Installation](installation)
-- [Configuration](configuration)
-- [Callbacks](callbacks)
-- [Best Practices](best-practices)
+- [Installation](installation.html)
+- [Configuration](configuration.html)
+- [Callbacks](callbacks.html)
+- [Best Practices](best-practices.html)
 
 ---
 
 ## Get Started
 
-Install the SDK, configure your API keys, and attach autosuggest to your search input in minutes.
+Install the SDK, configure your API keys, and attach autosuggest to your search
+input in minutes.
