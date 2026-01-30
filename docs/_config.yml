@@ -2,39 +2,33 @@ title: Autosuggest JS SDK
 description: JavaScript SDK for Autosuggest by Unbxd
 theme: just-the-docs
 
-
 url: https://unbxd.github.io
+baseurl: /autosuggest-js-sdk-docs
 
 logo: "https://mma.prnewswire.com/media/1000849/unbxdlogo_black_Logo.jpg"
-# favicon_ico: "/docs/assets/favicon.png"
-
-aux_links:
-  Template Repository: https://github.com/unbxd/autosuggest-js-sdk/
 
 back_to_top: true
 back_to_top_text: "Back to top"
 
-footer_content: "Copyright &copy; 2026 <a href=\"https://unbxd.com/\">Unbxd</a> Inc, All Rights Reserved."
-
 enable_copy_code_button: true
 
-# Aux links for the upper right navigation
+footer_content: >
+  Copyright © 2026
+  <a href="https://unbxd.com/" target="_blank">Unbxd</a>.
+  All rights reserved.
+
 aux_links:
   "View on GitHub":
     - "https://github.com/unbxd/autosuggest-js-sdk/"
 
-# Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: true
 
-# External navigation links
 nav_external_links:
   - title: View on GitHub
     url: https://github.com/unbxd/autosuggest-js-sdk/
 
-# Footer "Edit this page on GitHub" link text
-gh_edit_link: true # show or hide edit this page link
+gh_edit_link: true
 gh_edit_link_text: "Edit this page on GitHub"
-gh_edit_repository: "https://github.com/unbxd/autosuggest-js-sdk" # the github URL for your repo
-gh_edit_branch: "documentation" # the branch that your docs is served from
-# gh_edit_source: docs # the source that your files originate from
-gh_edit_view_mode: "edit" # "tree" or "edit" if you want the user to jump into the editor immediately
+gh_edit_repository: "https://github.com/unbxd/autosuggest-js-sdk"
+gh_edit_branch: "documentation"
+gh_edit_view_mode: "edit"
