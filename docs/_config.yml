@@ -5,7 +5,7 @@ remote_theme: just-the-docs/just-the-docs
 url: https://unbxd.github.io
 baseurl: /autosuggest-js-sdk-docs
 
-logo: "https://mma.prnewswire.com/media/1000849/unbxdlogo_black_Logo.jpg"
+logo: "/assets/images/logo.png"
 
 back_to_top: true
 back_to_top_text: "Back to top"
