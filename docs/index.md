@@ -24,15 +24,27 @@ powered by Unbxd.
 
 ## Introduction
 
-The **Autosuggest JS SDK** enables you to add intelligent, real-time search
-suggestions to your application as users type into a search input.
+## Introduction
 
-It is designed to improve product discovery, reduce search effort, and guide
-users toward relevant results by showing suggestions instantly—without requiring
-complex setup or heavy frontend frameworks.
+The **Autosuggest JS SDK** is a lightweight JavaScript library that enables
+real-time search suggestions as users type into a search input. It helps guide
+users toward relevant queries and products by dynamically presenting suggestions
+based on partial input.
 
-This SDK is browser-ready and can be integrated directly into any web application
-using a simple script include.
+By surfacing meaningful suggestions early in the search journey, Autosuggest
+reduces typing effort, minimizes zero-result searches, and improves overall
+search efficiency. This results in faster discovery, higher engagement, and a
+more intuitive search experience for end users.
+
+The SDK is designed to be easy to integrate and flexible to configure. It can be
+used with any web application—regardless of framework—and does not require build
+tools or additional dependencies. Once initialized, Autosuggest listens to user
+input events and fetches relevant suggestions from Unbxd in real time.
+
+This documentation provides a complete reference for integrating and using the
+Autosuggest JS SDK, including setup instructions, configuration options,
+available methods, event callbacks, and best practices for implementation.
+
 
 ---
 
