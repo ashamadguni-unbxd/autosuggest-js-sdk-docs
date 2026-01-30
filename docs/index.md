@@ -2,6 +2,8 @@
 layout: default
 title: Autosuggest JS SDK Documentation
 description: Autosuggest JS SDK Documentation
+nav_order: 1
+permalink: /
 ---
 
 A JavaScript SDK for building fast, flexible, and customizable autosuggest
