@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Core Configuration
-parent: Configuration
+parent: Configurations
 nav_order: 1
 ---
 
