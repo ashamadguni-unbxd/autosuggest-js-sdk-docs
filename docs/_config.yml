@@ -32,3 +32,7 @@ gh_edit_link_text: "Edit this page on GitHub"
 gh_edit_repository: "https://github.com/unbxd/autosuggest-js-sdk"
 gh_edit_branch: "documentation"
 gh_edit_view_mode: "edit"
+
+just_the_docs:
+  custom_css:
+    - assets/css/custom.scss
