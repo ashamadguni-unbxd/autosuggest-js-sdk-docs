@@ -1,3 +1,8 @@
+---
+layout: default
+title: Installation
+---
+
 # Installation
 
 Autosuggest JS SDK provides real-time search suggestions as users type into a search input.  
