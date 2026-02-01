@@ -12,20 +12,17 @@ Core configuration options are required to initialize the Autosuggest JS SDK. Th
 ---
 
 ## siteKey
-{: .label .label-blue }
 String
 {: .label }
 Required
 {: .label .label-red }
-Default: ""
-{: .label .label-grey }
 
-The `siteKey` uniquely identifies your site within the Unbxd platform. All Autosuggest API requests are scoped to the site associated with this key.
+A unique identifier assigned by Unbxd to each site created in the Unbxd Console dashboard. It is required to associate Autosuggest API requests with the correct site. Refer to [this section](https://unbxd.com/docs/site-search/documentation/configure-site-profile/) for more information.
+
+## Default Value
 
 ```
-const autosuggest = new Autosuggest({
-  siteKey: "ss-unbxd-aus-demo-fashion831421736321881"
-});
+siteKey:NA
 ```
 
 ---
