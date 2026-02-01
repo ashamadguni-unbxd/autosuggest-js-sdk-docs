@@ -18,7 +18,7 @@ String
 Required
 {: .label .label-red }
 
-A unique identifier assigned by Unbxd to each site created in the Unbxd Console dashboard. It is required to associate Autosuggest API requests with the correct site. Refer to [this section](https://unbxd.com/docs/site-search/documentation/configure-site-profile/) for more information.
+A unique identifier assigned by Unbxd to each site created in the Unbxd Console dashboard. It is required to associate Autosuggest API requests with the correct site. Refer to [this section](https://unbxd.com/docs/site-search/documentation/configure-site-profile/) for steps to retrieve the Site Key for your account.
 
 ### Default Value
 
@@ -29,34 +29,38 @@ siteKey:NA
 ---
 
 ## apiKey
-{: .label .label-blue }
+{: .d-inline-block }
 String
 {: .label }
 Required
 {: .label .label-red }
-Default: ""
-{: .label .label-grey }
 
-The `apiKey` is used to authenticate Autosuggest API requests and ensures that only authorized clients can access Autosuggest data.
+A unique API Key assigned to each site created in the Unbxd console dashboard. Refer to [this section](https://unbxd.com/docs/site-search/documentation/configure-site-profile/) for steps to retrieve the API Key for your account.
 
+
+### Default Value
 ```
-const autosuggest = new Autosuggest({
-  apiKey: "1ccbb7fcb0faf770d1c228be80ba16d9"
-});
+apiKey: NA
 ```
 
 ---
 
 ## searchInput
-{: .label .label-blue }
+{: .d-inline-block }
 String | null
 {: .label }
 Required
 {: .label .label-red }
-Default: null
-{: .label .label-grey }
 
 Specifies the CSS selector of the input element where Autosuggest should be enabled. The SDK queries the DOM using this selector and attaches autosuggest behavior to the matched element.
+
+### Default Value
+
+```
+searchInput: null
+```
+
+Example Usage:
 
 ```
 const autosuggest = new Autosuggest({
