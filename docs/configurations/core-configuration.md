@@ -12,6 +12,7 @@ Core configuration options are required to initialize the Autosuggest JS SDK. Th
 ---
 
 ## siteKey
+{: .d-inline-block }
 String
 {: .label }
 Required
@@ -19,7 +20,7 @@ Required
 
 A unique identifier assigned by Unbxd to each site created in the Unbxd Console dashboard. It is required to associate Autosuggest API requests with the correct site. Refer to [this section](https://unbxd.com/docs/site-search/documentation/configure-site-profile/) for more information.
 
-## Default Value
+### Default Value
 
 ```
 siteKey:NA
