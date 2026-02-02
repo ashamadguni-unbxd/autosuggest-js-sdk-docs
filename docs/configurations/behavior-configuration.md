@@ -34,6 +34,7 @@ const autosuggest = new Autosuggest({
 ```
 **Note:** A value of `0` disables debouncing, meaning the Autosuggest API will be called on every input change once the `minChars` threshold is met.
 
+---
 
 ## minChars
 {: .d-inline-block }
