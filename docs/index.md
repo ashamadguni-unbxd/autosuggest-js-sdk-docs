@@ -83,8 +83,6 @@ Supported suggestion types include:
 - [Installation](installation.html)
 - [Getting Started](getting-started.html)
 - [Configurations](configurations.html)
-- [Methods](methods.html)
-- [Events](events.html)
 - [Best Practices](best-practices.html)
 - [FAQs](faqs.html)
 
