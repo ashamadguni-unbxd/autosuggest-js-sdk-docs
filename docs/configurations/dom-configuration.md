@@ -21,12 +21,12 @@ Optional
 Defines the HTML tag used to create the autosuggestion container element. This allows you to choose a semantic HTML tag that best fits your layout or accessibility requirements.
 
 ### Default Value
-```
+```js
 containerTag: "div"
 ```
 
 Example Usage:
-```
+```js
 const autosuggest = new Autosuggest({
   containerTag: "section"
 });
@@ -46,12 +46,12 @@ Specifies the HTML attributes that should be applied to the autosuggestion conta
 Note: Array values (such as class) will be handled appropriately by the SDK.
 
 ### Default Value
-```
+```js
 attributes: {}
 ```
 
 Example Usage:
-```
+```js
 const autosuggest = new Autosuggest({
   attributes: {
     "class": ["search-input", "unbxd-autosuggest-box"],
