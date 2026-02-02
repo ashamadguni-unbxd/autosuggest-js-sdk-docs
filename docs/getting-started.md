@@ -12,8 +12,8 @@ nav_order: 3
 ## Table of contents
 {: .no_toc .text-delta }
 
-1. TOC
-{:toc_levels: 2}
+- TOC
+{:toc_levels: 1..2}
 
 ---
 
