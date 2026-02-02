@@ -25,7 +25,7 @@ The `callbacks` object groups all event-based callback functions supported by th
 Currently, the SDK exposes callbacks primarily for error handling, with scope to add more event hooks in future versions.
 
 ### Default Value
-```
+```js
 callbacks: {
   onError: null
 }
@@ -46,7 +46,7 @@ The `onError` callback is invoked whenever an error occurs during the Autosugges
 This callback allows you to gracefully handle errors without breaking the user experience. Common use cases include logging errors to the console, reporting issues to monitoring tools, or displaying fallback UI behavior.
 
 ### Default Value
-```
+```js
 onError: null
 ```
 
@@ -57,7 +57,7 @@ onError: null
   An error object or error message describing the failure. This may include API error details, configuration issues, or runtime exceptions.
 
 ### Example Usage
-```
+```js
 const autosuggest = new Autosuggest({
   callbacks: {
     onError: (error) => {
