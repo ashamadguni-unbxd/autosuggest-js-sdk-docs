@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Notes & Best Practices
+title: Best Practices
 nav_order: 4
 ---
 
@@ -94,6 +94,4 @@ The `attributes` configuration allows you to attach HTML attributes to the autos
 - Array values (such as for `class`) are fully supported and handled appropriately by the SDK.
 
 ---
-
-The response format is as follows:
 
