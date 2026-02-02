@@ -73,7 +73,7 @@ Always configure an `onError` callback in production environments to log or trac
 
 ---
 
-## COMPLETE EXAMPLE
+## Complete Example
 ```js
 const autosuggest = new Autosuggest({
     // Basic Configuration
@@ -114,7 +114,7 @@ const autosuggest = new Autosuggest({
 
 ---
 
-## DEFAULT CONFIGURATION
+## Default Configuration
 If no configuration is provided, the SDK falls back to the following defaults:
 
 ```js
