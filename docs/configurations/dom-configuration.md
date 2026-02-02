@@ -21,4 +21,14 @@ Optional
 Defines the HTML tag used to create the autosuggestion container element. This allows you to choose a semantic HTML tag that best fits your layout or accessibility requirements.
 
 ### Default Value
+```
+containerTag: "div"
+```
+
+Example Usage:
+```
+const autosuggest = new Autosuggest({
+  containerTag: "section"
+});
+```
 
