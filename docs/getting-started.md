@@ -17,8 +17,6 @@ nav_order: 3
 
 ---
 
----
-
 ## Prerequisite
 
 Before integrating the Autosuggest SDK, ensure the following:
