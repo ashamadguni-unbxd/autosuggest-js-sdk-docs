@@ -22,7 +22,7 @@ A unique identifier assigned by Unbxd to each site created in the Unbxd Console 
 
 ### Default Value
 
-```
+```js
 siteKey:NA
 ```
 
@@ -39,7 +39,7 @@ A unique API Key assigned to each site created in the Unbxd console dashboard. R
 
 
 ### Default Value
-```
+```js
 apiKey: NA
 ```
 
@@ -56,19 +56,19 @@ Specifies the CSS selector of the input element where Autosuggest should be enab
 
 ### Default Value
 
-```
+```js
 searchInput: null
 ```
 
 Example Usage:
 
-```
+```js
 const autosuggest = new Autosuggest({
   searchInput: ".search-input"
 });
 ```
 
-```
+```js
 const autosuggest = new Autosuggest({
   searchInput: "#search-box"
 });
@@ -80,7 +80,7 @@ const autosuggest = new Autosuggest({
 
 The following configuration represents the minimum setup required to initialize the Autosuggest JS SDK:
 
-```
+```js
 const autosuggest = new Autosuggest({
   siteKey: "your-site-key",
   apiKey: "your-api-key",
