@@ -88,13 +88,4 @@ const autosuggest = new Autosuggest({
 });
 ```
 
----
-
-## Next Steps
-
-After completing the core configuration, continue with:
-
-- Container & DOM Configuration  
-- Behavior & Performance Configuration  
-- Rendering & Customization  
 
