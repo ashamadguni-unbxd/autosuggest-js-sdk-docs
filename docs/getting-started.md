@@ -13,7 +13,7 @@ nav_order: 3
 {: .no_toc .text-delta }
 
 1. TOC
-{:toc}
+{:toc_levels: 1..2}
 
 ---
 
