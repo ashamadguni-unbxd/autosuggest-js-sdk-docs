@@ -1,9 +1,24 @@
-1.4 containerTag (String, Optional)
+---
+layout: default
+title: Container & DOM Configuration
+parent: Configurations
+nav_order: 2
+---
 
-This configuration defines the HTML tag used to create the autosuggestion container element in the DOM. It allows you to control the semantic structure of the rendered autosuggest container based on your application’s markup requirements.
+# Container & DOM Configuration
 
-Default: "div"
+Container and DOM configuration options allow you to control how and where the Autosuggest container is rendered in the DOM. These settings help align Autosuggest with your application’s markup structure, styling conventions, and testing requirements.
 
-Examples: "div", "section", "ul"
+---
 
-Use this option when you want the autosuggest container to be rendered using a specific HTML tag for styling, accessibility, or layout consistency.
+## containerTag
+{: .d-inline-block }
+String
+{: .label }
+Optional
+{: .label .label-blue }
+
+Defines the HTML tag used to create the autosuggestion container element. This allows you to choose a semantic HTML tag that best fits your layout or accessibility requirements.
+
+### Default Value
+
