@@ -1,19 +1,10 @@
 ---
 layout: default
-title: Getting Started – Autosuggest SDK
+title: Getting Started
 nav_order: 3
 ---
 
-# Getting Started – Autosuggest SDK
-
-## Table of Contents
-- Prerequisite
-- Integration Instructions
-- Complete Example
-- Default Configuration
-- Notes & Best Practices
-- API Response Structure
-- FAQs
+# Getting Started
 
 ---
 
