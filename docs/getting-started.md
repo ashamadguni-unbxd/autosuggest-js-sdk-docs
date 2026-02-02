@@ -35,7 +35,7 @@ Before integrating the Autosuggest SDK, ensure the following:
 
 Follow these steps to integrate Autosuggest into your site.
 
-### Configure Site Credentials
+### 1\. Configure Site Credentials
 
 Update the `siteKey` and `apiKey` with values specific to your account.
 
@@ -44,7 +44,7 @@ siteKey: "<<site key>>",
 apiKey: "<<api key>>"
 ```
 
-### Attach Autosuggest to Search Input
+### 2\. Attach Autosuggest to Search Input
 
 Provide a valid CSS selector or DOM element for the search input field.
 
@@ -53,7 +53,7 @@ searchInput: ".search-input"
 ```
 This is mandatory for Autosuggest to initialize.
 
-### Customize API Configuration
+### 3\. Customize API Configuration
 
 Control what type of suggestions appear and how many results are fetched.
 
@@ -65,7 +65,7 @@ Control what type of suggestions appear and how many results are fetched.
 
 These should be adjusted based on UI space and performance needs.
 
-### Handle Errors Gracefully
+### 4\. Handle Errors Gracefully
 
 Always configure an `onError` callback in production environments to log or track errors.
 
