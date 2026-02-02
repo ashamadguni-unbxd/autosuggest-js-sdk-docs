@@ -22,12 +22,12 @@ Specifies the delay (in milliseconds) to wait after the user stops typing before
 
 ### Default Value
 
-```
+```js
 debounceDelay: 0
 ```
 
 Example Usage:
-```
+```js
 const autosuggest = new Autosuggest({
   debounceDelay: 500
 });
@@ -46,12 +46,12 @@ Optional
 Defines the minimum number of characters required in the input field before triggering an Autosuggest API call. This prevents suggestions from being fetched too early and helps improve overall performance.
 
 ### Default Value
-```
+```js
 minChars: 3
 ```
 
 Example Usage:
-```
+```js
 const autosuggest = new Autosuggest({
   minChars: 2
 });
