@@ -23,7 +23,7 @@ The `api` object groups all API-related configuration options. It defines which 
 If not provided, Autosuggest uses default values for all API settings.
 
 ### Default Value
-```
+```js
 api: {
   apiEndpoint: "https://search.unbxd.io",
   inFields: { count: 2 },
@@ -46,12 +46,12 @@ Optional
 Specifies the base URL for the Unbxd Search API used to fetch autosuggestion data. In most cases, the default endpoint should be used. This option is primarily useful for advanced setups such as private cloud deployments or custom routing.
 
 ### Default Value
-```
+```js
 apiEndpoint: "https://search.unbxd.io"
 ```
 
 Example Usage:
-```
+```js
 const autosuggest = new Autosuggest({
   api: {
     apiEndpoint: "https://search.unbxd.io"
@@ -80,12 +80,12 @@ Optional
 Defines the number of in-field suggestions to fetch per autosuggest request.
 
 ### Default Value
-```
+```js
 count: 2
 ```
 
 Example Usage:
-```
+```js
 const autosuggest = new Autosuggest({
   api: {
     inFields: { count: 5 }
@@ -115,12 +115,12 @@ Optional
 Specifies the number of popular product suggestions to retrieve.
 
 ### Default Value
-```
+```js
 count: 3
 ```
 
 Example Usage:
-```
+```js
 const autosuggest = new Autosuggest({
   api: {
     popularProducts: { count: 5 }
@@ -150,12 +150,12 @@ Optional
 Defines the number of keyword suggestions to fetch.
 
 ### Default Value
-```
+```js
 count: 2
 ```
 
 Example Usage:
-```
+```js
 const autosuggest = new Autosuggest({
   api: {
     keywordSuggestions: { count: 5 }
@@ -185,12 +185,12 @@ Optional
 Specifies the number of top search queries to include in autosuggest results.
 
 ### Default Value
-```
+```js
 count: 2
 ```
 
 Example Usage:
-```
+```js
 const autosuggest = new Autosuggest({
   api: {
     topQueries: { count: 5 }
@@ -220,12 +220,12 @@ Optional
 Defines the number of promoted suggestions to fetch.
 
 ### Default Value
-```
+```js
 count: 2
 ```
 
 Example Usage:
-```
+```js
 const autosuggest = new Autosuggest({
   api: {
     promotedSuggestions: { count: 5 }
