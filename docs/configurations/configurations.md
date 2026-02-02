@@ -11,5 +11,4 @@ permalink: /docs/configurations/
 
 Autosuggest JS SDK configurations allow you to control authentication, DOM attachment, runtime behavior, and UI customization.  
 All configuration options are provided during SDK initialization and are optional unless explicitly stated.
-{: .fs-5 .fw-300 }
 
