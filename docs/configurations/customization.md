@@ -22,14 +22,14 @@ Defines a custom template function used to render the autosuggestion container. 
 
 ### Default Value
 
-```
+```js
 template: AutosuggestionBoxTemplate
 ```
 
 (The SDK’s built-in default template is used when no custom template is provided.)
 
 Example Usage:
-```
+```js
 function CustomTemplate(props) {
     const { POPULAR_PRODUCTS, IN_FIELD, KEYWORD_SUGGESTION, 
             PROMOTED_SUGGESTION, TOP_SEARCH_QUERIES } = props;
