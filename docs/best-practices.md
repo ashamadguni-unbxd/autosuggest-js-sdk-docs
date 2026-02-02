@@ -92,6 +92,4 @@ The `attributes` configuration allows you to attach HTML attributes to the autos
 - Useful for applying CSS classes, IDs, and data attributes.
 - Helps with styling, testing, and DOM querying.
 - Array values (such as for `class`) are fully supported and handled appropriately by the SDK.
-
----
-
+  
