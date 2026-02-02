@@ -48,7 +48,7 @@ apiKey: "<<api key>>"
 
 Provide a valid CSS selector or DOM element for the search input field.
 
-```
+```js
 searchInput: ".search-input"
 ```
 This is mandatory for Autosuggest to initialize.
@@ -58,13 +58,9 @@ This is mandatory for Autosuggest to initialize.
 Control what type of suggestions appear and how many results are fetched.
 
 * In-field suggestions
-
 * Popular products
-
 * Keyword suggestions
-
 * Top queries
-
 * Promoted suggestions
 
 These should be adjusted based on UI space and performance needs.
