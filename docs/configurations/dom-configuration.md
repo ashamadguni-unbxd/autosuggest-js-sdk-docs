@@ -33,7 +33,6 @@ const autosuggest = new Autosuggest({
 ```
 
 ## attributes
-
 {: .d-inline-block }
 Object
 {: .label }
