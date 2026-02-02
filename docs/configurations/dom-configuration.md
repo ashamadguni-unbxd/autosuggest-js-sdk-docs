@@ -32,3 +32,30 @@ const autosuggest = new Autosuggest({
 });
 ```
 
+## attributes
+
+{: .d-inline-block }
+Object
+{: .label }
+Optional
+{: .label .label-blue }
+
+Specifies the HTML attributes that should be applied to the autosuggestion container element. This is useful for adding CSS classes, IDs, test identifiers, or custom data attributes required by your application.
+
+Note: Array values (such as class) will be handled appropriately by the SDK.
+
+### Default Value
+```
+attributes: {}
+```
+
+Example Usage:
+```
+const autosuggest = new Autosuggest({
+  attributes: {
+    "class": ["search-input", "unbxd-autosuggest-box"],
+    "data-testid": "search-input",
+    "id": "search-id"
+  }
+});
+```
