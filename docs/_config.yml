@@ -3,7 +3,7 @@ description: JavaScript SDK for Autosuggest by Unbxd
 remote_theme: just-the-docs/just-the-docs
 
 url: https://unbxd.github.io
-baseurl: /autosuggest-js-sdk
+baseurl: /autosuggest-js-sdk-docs
 
 logo: "/assets/images/logo.svg"
 
