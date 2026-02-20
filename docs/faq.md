@@ -6,6 +6,7 @@ permalink: /faqs.html
 ---
 
 # FAQs
+{: .no_toc}
 
 This page answers common questions about the Autosuggest JS SDK, including setup, configuration, behavior, and troubleshooting. For step-by-step integration, see [Getting Started](getting-started.html). For all configuration options, see [Configurations](configurations/configurations.html).
 
