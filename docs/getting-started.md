@@ -104,36 +104,3 @@ const autosuggest = new Autosuggest({
     }
 });
 ```
-
----
-
-## Default Configuration
-If no configuration is provided, the SDK falls back to the defaults defined in `src/constants/options.js`. See [Configuration](configuration.html) for the full reference.
-
-```js
-{
-    siteKey: "",
-    apiKey: "",
-    inputBoxConfigs: {
-        searchInput: null,
-        debounceDelay: 0,
-        minChars: 3,
-    },
-    suggestionBoxConfigs: {
-        containerTag: "div",
-        attributes: {},
-        template: null,
-    },
-    apiConfigs: {
-        apiEndpoint: "https://search.unbxd.io",
-        initialRequest: false,
-        inFields: { count: 2 },
-        popularProducts: { count: 3, fields: [] },
-        keywordSuggestions: { count: 2 },
-        topQueries: { count: 2 },
-        promotedSuggestions: { count: 2 },
-        trendingSearches: { count: 5 },
-    },
-    onEvent: function ({ eventType }) { ... }
-}
-```
