@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Changelog
-nav_order: 7
+title: Changelogs
+nav_order: 3
 permalink: /changelog.html
 ---
 
-# Changelog
+# Changelogs
 
 {: .important }
 > **Important**
@@ -30,5 +30,3 @@ permalink: /changelog.html
 - Lifecycle event callback (`onEvent`) for analytics, error handling, and integration.
 - Configurable debounce and minimum character threshold for API requests.
 - Framework-agnostic; works with any frontend or plain HTML/JS.
-
----
