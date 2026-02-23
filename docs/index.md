@@ -11,6 +11,7 @@ permalink: /
 A JavaScript SDK for building **fast, real-time autosuggest experiences** powered by Unbxd.
 Built with modern JavaScript and designed to work seamlessly **without jQuery or other legacy dependencies**.
 
+
 <div class="mt-6">
   <a href="/autosuggest-js-sdk-docs/installation.html" class="btn btn-primary mr-2">
     Get started now
@@ -19,6 +20,13 @@ Built with modern JavaScript and designed to work seamlessly **without jQuery or
     View it on GitHub
   </a>
 </div>
+
+> ⚠️ **Legacy Autosuggest SDK**
+>
+> If you are using the previous version of the Autosuggest SDK, you can access its documentation here:  
+> https://ashamadguni-unbxd.github.io/autosuggest-js-sdk-docs/
+>
+> For new integrations, we recommend using the latest Autosuggest JS SDK for improved performance, flexibility, and modern JavaScript support.
 
 ---
 
