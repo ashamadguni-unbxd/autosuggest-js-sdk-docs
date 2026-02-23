@@ -8,8 +8,8 @@ permalink: /
 
 # Autosuggest JS SDK Documentation
 
-A JavaScript SDK for building **fast, real-time autosuggest experiences**
-powered by Unbxd.
+A JavaScript SDK for building **fast, real-time autosuggest experiences** powered by Unbxd.
+Built with modern JavaScript and designed to work seamlessly **without jQuery or other legacy dependencies**.
 
 <div class="mt-6">
   <a href="/autosuggest-js-sdk-docs/installation.html" class="btn btn-primary mr-2">
