@@ -1,14 +1,13 @@
 ---
 layout: default
 title: FAQs
-nav_order: 6
+nav_order: 7
 permalink: /faqs.html
 ---
 
 # FAQs
-{: .no_toc}
 
-This page answers common questions about the Autosuggest JS SDK, including setup, configuration, behavior, and troubleshooting. For step-by-step integration, see [Getting Started](getting-started.html). For all configuration options, see [Configurations](configurations/configurations.html).
+This page answers common questions about the New Autosuggest SDK, including setup, configuration, behavior, and troubleshooting. For step-by-step integration, see [Getting Started](getting-started.html). For all configuration options, see [Configuration](configuration.html).
 
 ---
 
@@ -22,15 +21,15 @@ This page answers common questions about the Autosuggest JS SDK, including setup
 
 ## General queries
 
-### What is the Autosuggest JS SDK?
+### What is the New Autosuggest SDK?
 
-The **Autosuggest JS SDK** is a lightweight JavaScript library that enables **real-time search suggestions** as users type into a search input. It helps guide users toward relevant queries and products by dynamically presenting suggestions based on partial input—reducing typing effort, minimizing zero-result searches, and improving overall search efficiency.
+The **New Autosuggest SDK** is a lightweight JavaScript library that enables **real-time search suggestions** as users type into a search input. It helps guide users toward relevant queries and products by dynamically presenting suggestions based on partial input—reducing typing effort, minimizing zero-result searches, and improving overall search efficiency.
 
-The SDK is designed to be easy to integrate and flexible to configure. It can be used with any web application, regardless of framework, and does not require build tools or additional dependencies. Once initialized, Autosuggest listens to user input events and fetches relevant suggestions from Unbxd in real time. By surfacing meaningful suggestions early in the search journey, it results in faster discovery, higher engagement, and a more intuitive search experience for end users.
+The SDK is designed to be easy to integrate and flexible to configure. It can be used with any web application, regardless of framework, and does not require build tools or additional dependencies. Once initialized, the new Autosuggest SDK listens to user input events and fetches relevant suggestions from Unbxd in real time. By surfacing meaningful suggestions early in the search journey, it results in faster discovery, higher engagement, and a more intuitive search experience for end users.
 
 ---
 
-### Do I need a framework to use the Autosuggest SDK?
+### Do I need a framework to use the New Autosuggest SDK?
 
 No. The SDK is **framework-agnostic** and works with:
 
@@ -43,15 +42,15 @@ The library is a single script that attaches to a search input and manages sugge
 
 ### What types of suggestions does the SDK support?
 
-The Autosuggest SDK supports multiple suggestion types, each configurable via the [API configuration](configurations/api-configuration.html):
+The New Autosuggest SDK supports multiple suggestion types, each configurable via [apiConfigs](configuration.html#apiconfigs):
 
 | Suggestion type | Description | Configuration |
 |-----------------|-------------|---------------|
-| **In-field suggestions** | Keyword suggestions matched against specific indexed fields (e.g. product name, category, brand). | `api.inFields.count` |
-| **Popular products** | Frequently viewed or searched products relevant to the user’s input. | `api.popularProducts.count` |
-| **Keyword suggestions** | Commonly searched or relevant keywords based on the user’s input. | `api.keywordSuggestions.count` |
-| **Top queries** | Most frequently searched queries across the site. | `api.topQueries.count` |
-| **Promoted suggestions** | Keywords or results boosted by merchandising rules in the Unbxd Console. | `api.promotedSuggestions.count` |
+| **In-field suggestions** | Keyword suggestions matched against specific indexed fields (e.g. product name, category, brand). | `apiConfigs.inFields.count` |
+| **Popular products** | Frequently viewed or searched products relevant to the user’s input. | `apiConfigs.popularProducts.count` |
+| **Keyword suggestions** | Commonly searched or relevant keywords based on the user’s input. | `apiConfigs.keywordSuggestions.count` |
+| **Top queries** | Most frequently searched queries across the site. | `apiConfigs.topQueries.count` |
+| **Promoted suggestions** | Keywords or results boosted by merchandising rules in the Unbxd Console. | `apiConfigs.promotedSuggestions.count` |
 
 You can enable or disable categories and set how many results to fetch per category. Adjust these counts based on your UI space and performance needs; see [Best Practices](best-practices.html) for guidance on suggestion counts.
 
@@ -61,7 +60,7 @@ You can enable or disable categories and set how many results to fetch per categ
 
 ### How do I get an API key and Site key to use with the SDK?
 
-To use the Autosuggest SDK, you need a valid **siteKey** and **apiKey** from your Unbxd account.
+To use the New Autosuggest SDK, you need a valid **siteKey** and **apiKey** from your Unbxd account.
 
 1. **Sign up or log in** at [Unbxd](https://unbxd.com/).
 2. **Complete the self-serve FTU (First Time User) flow** — This includes account setup, site creation, feed upload, and relevancy configuration. Detailed guidance is available in the [Self Serve Dashboard Documentation](https://unbxd.com/docs/site-search/integration-documentation/onboarding-flow/).
@@ -74,11 +73,11 @@ The exact steps may vary depending on your plan and Unbxd’s current offerings.
 
 ### How do I configure the SDK on my website?
 
-Configuring the Autosuggest SDK involves **including the script** and **initializing the SDK** with the required and optional settings.
+Configuring the New Autosuggest SDK involves **including the script** and **initializing the SDK** with the required and optional settings.
 
 **1. Include the script (and optional styles)**
 
-Add the Autosuggest script to your HTML, as described in [Installation](installation.html):
+Add the New Autosuggest SDK script to your HTML, as described in [Installation](installation.html):
 
 ```html
 <script src="https://libraries.unbxdapi.com/search-sdk/v1/autosuggest.min.js"></script>
@@ -98,7 +97,7 @@ You must provide:
 
 - **siteKey** — Your Unbxd site key.
 - **apiKey** — Your Unbxd API key.
-- **searchInput** — A valid CSS selector (e.g. `".search-input"`) or DOM element for the search input to which Autosuggest will attach.
+- **searchInput** — A valid CSS selector (e.g. `".search-input"`) or DOM element for the search input to which the new Autosuggest SDK will attach.
 
 Example minimal configuration:
 
@@ -114,19 +113,19 @@ const autosuggest = new Autosuggest({
 
 You can then customize behavior, API, DOM, and callbacks. For example:
 
-- **Behavior** — `debounceDelay`, `minChars` (see [Behavior & Performance Configuration](configurations/behavior-configuration.html)).
-- **API** — Suggestion types and counts (see [API Configuration](configurations/api-configuration.html)).
-- **DOM** — `containerTag`, `attributes` (see [DOM Configuration](configurations/dom-configuration.html)).
-- **Callbacks** — `onError`, and other lifecycle hooks (see [Callbacks Configuration](configurations/callback-configuration.html)).
-- **Templates** — Custom UI (see [Customization](configurations/customization.html)).
+- **Behavior** — `debounceDelay`, `minChars` (see [Configuration](configuration.html#inputboxconfigs)).
+- **API** — Suggestion types and counts (see [Configuration](configuration.html#apiconfigs)).
+- **DOM** — `containerTag`, `attributes` (see [Configuration](configuration.html#suggestionboxconfigs)).
+- **Events** — `onEvent` for lifecycle hooks (see [Configuration](configuration.html#onevent)).
+- **Templates** — Custom UI (see [Configuration](configuration.html#suggestionboxconfigstemplate)).
 
-A full example is available in [Getting Started](getting-started.html). For a complete list of options, see [Configurations](configurations/configurations.html).
+A full example is available in [Getting Started](getting-started.html). For a complete list of options, see [Configuration](configuration.html).
 
 ---
 
 ### How can I test the SDK before deploying to production?
 
-You can test the Autosuggest SDK safely by using a **sandbox or test environment** that is isolated from production.
+You can test the New Autosuggest SDK safely by using a **sandbox or test environment** that is isolated from production.
 
 - **Use separate credentials** — Create or use a test project in the Unbxd dashboard with its own **API key**, **site key**, and **index**. This keeps test traffic and configuration separate from your live site.
 - **Use a test feed** — Upload and index a test feed (or a subset of data) so you can verify suggestion behavior without affecting production data.
@@ -142,8 +141,8 @@ This approach lets you experiment with configuration, templates, and styling wit
 Yes. The default styles are **optional**. You can fully style the suggestion UI with your own CSS.
 
 - If you **omit** the default stylesheet (`vanillaSearch.min.css`), the SDK still renders the suggestion box; you are responsible for all styling so that it matches your site.
-- You can use the **attributes** configuration (e.g. `attributes: { class: ["my-autosuggest-box"] }`) to attach your own classes to the container for targeting with CSS.
-- For full control over structure and markup, use a **custom template** (see [Customization](configurations/customization.html)). The template function receives suggestion data and returns an HTML string, which you can style entirely with your own classes and design system.
+- You can use the **attributes** configuration (e.g. `suggestionBoxConfigs.attributes: { class: ["my-autosuggest-box"] }`) to attach your own classes to the container for targeting with CSS.
+- For full control over structure and markup, use a **custom template** (see [Configuration](configuration.html#suggestionboxconfigstemplate)). The template function receives suggestion data and returns an HTML string, which you can style entirely with your own classes and design system.
 
 This makes it possible to align the autosuggest experience with your brand and layout without relying on the default theme.
 
@@ -155,10 +154,10 @@ This makes it possible to align the autosuggest experience with your brand and l
 
 Suggestions are requested based on two main settings: **minChars** and **debounceDelay**.
 
-- **minChars** — The minimum number of characters the user must type before an Autosuggest API call is triggered. The default is `3`. For example, with `minChars: 3`, typing "sh" will not trigger a request; "sho" will. This prevents too many requests for very short queries and can be set to `2` or `3` for a balanced experience (see [Best Practices](best-practices.html)).
+- **minChars** — The minimum number of characters the user must type before a new Autosuggest SDK API call is triggered. The default is `3`. For example, with `minChars: 3`, typing "sh" will not trigger a request; "sho" will. This prevents too many requests for very short queries and can be set to `2` or `3` for a balanced experience (see [Best Practices](best-practices.html)).
 - **debounceDelay** — The delay in **milliseconds** after the user stops typing before the API call is sent. For example, with `debounceDelay: 500`, rapid typing of "shoes" will result in one request 500 ms after the last keystroke, rather than a request on every character. This reduces the number of API calls and improves performance. A value of `0` disables debouncing (not recommended in production).
 
-Both options are documented in [Behavior & Performance Configuration](configurations/behavior-configuration.html). Tuning them helps balance responsiveness with server load and rate limits.
+Both options are documented in [Configuration](configuration.html#inputboxconfigs). Tuning them helps balance responsiveness with server load and rate limits.
 
 ---
 
@@ -172,17 +171,17 @@ Common use cases include:
 - **Updating the search input** — Set the input value to the selected suggestion and optionally submit the form or trigger a search.
 - **Analytics and tracking** — Record the suggestion click for conversion or engagement analytics.
 
-The exact callback name and parameters may vary by SDK version; refer to [Callbacks Configuration](configurations/callback-configuration.html) and the SDK reference for the current API. Implement this callback during initialization so that every selection is handled consistently.
+The exact callback name and parameters may vary by SDK version; refer to [Configuration](configuration.html#onevent) (onEvent) and the SDK reference for the current API. Implement this callback during initialization so that every selection is handled consistently.
 
 ---
 
-### Does the Autosuggest SDK work on mobile and touch devices?
+### Does the New Autosuggest SDK work on mobile and touch devices?
 
 Yes. The SDK works on **mobile and touch devices**. It does not rely on mouse-only events; suggestions can be opened, scrolled, and selected via touch.
 
 You can further optimize for small screens by:
 
-- **Adjusting suggestion counts** — Request fewer suggestions per category on mobile to keep the dropdown compact and fast (see [API Configuration](configurations/api-configuration.html)).
+- **Adjusting suggestion counts** — Request fewer suggestions per category on mobile to keep the dropdown compact and fast (see [Configuration](configuration.html#apiconfigs)).
 - **Using responsive CSS** — Style the suggestion container and items with media queries so layout, font size, and spacing work well on narrow viewports.
 - **Tuning behavior** — Consider slightly higher `minChars` or `debounceDelay` on mobile if you observe performance or UX issues, though the same configuration often works across devices.
 
@@ -208,10 +207,10 @@ If suggestions do not appear, work through the following:
 4. **Browser console and network**  
    Open the browser’s developer tools:  
    - **Console** — Look for JavaScript errors (e.g. invalid config, missing element).  
-   - **Network** — Check whether Autosuggest API requests are sent, and whether they return 200 with valid JSON. Failed or blocked requests (e.g. CORS, wrong endpoint) will prevent suggestions from appearing.
+   - **Network** — Check whether new Autosuggest SDK API requests are sent, and whether they return 200 with valid JSON. Failed or blocked requests (e.g. CORS, wrong endpoint) will prevent suggestions from appearing.
 
 5. **Error callback**  
-   Configure the **onError** callback (see [Callbacks Configuration](configurations/callback-configuration.html)) to log or report errors. This helps capture API failures, network issues, or invalid responses in production.
+   Configure the **onEvent** callback (see [Configuration](configuration.html#onevent)) to log or report errors. This helps capture API failures, network issues, or invalid responses in production.
 
 Addressing these areas usually resolves missing suggestions. If the issue persists, verify your Unbxd dashboard and account status and contact Unbxd support if needed.
 
@@ -223,10 +222,10 @@ Too many requests are usually due to **no or low debouncing** or **low minChars*
 
 - **Enable debouncing** — Set **debounceDelay** to a value such as **300–500 ms**. This waits until the user pauses typing before sending a request, so rapid typing generates fewer calls. A value of **0** disables debouncing and is **not recommended in production** (see [Best Practices](best-practices.html)).
 - **Increase minChars** — Use at least **2 or 3** characters (e.g. `minChars: 3`) so that very short partial queries do not trigger requests.
-- **Review suggestion counts** — Lower `count` for each suggestion type in [API Configuration](configurations/api-configuration.html) if you do not need many results; this can also reduce response size and processing time.
+- **Review suggestion counts** — Lower `count` for each suggestion type in [Configuration](configuration.html#apiconfigs) if you do not need many results; this can also reduce response size and processing time.
 
-These settings are documented in [Behavior & Performance Configuration](configurations/behavior-configuration.html). Balancing **debounceDelay** and **minChars** will significantly reduce the number of API calls while keeping the experience responsive.
+These settings are documented in [Configuration](configuration.html#inputboxconfigs). Balancing **debounceDelay** and **minChars** will significantly reduce the number of API calls while keeping the experience responsive.
 
 ---
 
-For more detail, see [Getting Started](getting-started.html), [Configurations](configurations/configurations.html), and [Best Practices](best-practices.html).
+For more detail, see [Getting Started](getting-started.html), [Configuration](configuration.html), and [Best Practices](best-practices.html).
