@@ -1,106 +1,79 @@
 ---
 layout: default
 title: Getting Started
-nav_order: 3
+nav_order: 2
 ---
 
-# Getting Started
-{: .no_toc }
+## Getting Started
 
----
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
+This guide explains how to install and initialize the Autosuggest JS SDK using the npm package.
 
 ---
 
-## Prerequisite
+### Prerequisites
 
-Before integrating the new Autosuggest SDK, ensure the following:
+Before installing and integrating the Autosuggest JS SDK, ensure the following requirements are met:
 
-- You have completed the **self-serve FTU flow**
-- Your feed is successfully uploaded and indexed
-- Required fields such as **title, imageUrl, price, categoryPath** are mapped correctly
+#### Environment Requirements
 
-> **Note:**  
-> The configuration attributes shown in this document are based on a **sample apparel feed**.  
-> These attributes **will vary depending on the site and feed schema** being used.
+- Node.js (LTS version recommended)
+- npm or Yarn package manager
+- A JavaScript project setup (e.g., React, Vue, Angular, or a bundler such as Webpack or Vite)
+
+#### Unbxd Account Setup
+
+1. Create and configure a site in the Unbxd Self Serve Dashboard.
+2. Upload your product feed.
+3. Configure relevancy settings.
+4. Retrieve your **Site Key** and **API Key** from the dashboard.
+
+These credentials are required to authenticate and fetch autosuggest results.
 
 ---
 
-## Integration Instructions
+### Install via npm
 
-Follow these steps to integrate the new Autosuggest SDK into your site.
+Install the Autosuggest JS SDK package:
 
-### Configure Site Credentials
-
-Update the `siteKey` and `apiKey` with values specific to your account.
-
-```js
-siteKey: "<<site key>>",
-apiKey: "<<api key>>"
+```bash
+npm install @unbxd-ui/autosuggest-js-sdk
 ```
 
-### Attach the New Autosuggest SDK to Search Input
+or using Yarn:
 
-Provide a valid CSS selector for the search input via `inputBoxConfigs.searchInput`. This is mandatory for the new Autosuggest SDK to initialize. See [Configuration](configuration.html#inputboxconfigs) for all options.
-
-### Customize API Configuration
-
-Control what type of suggestions appear and how many results are fetched.
-
-* In-field suggestions
-* Popular products
-* Keyword suggestions
-* Top queries
-* Promoted suggestions
-
-These should be adjusted based on UI space and performance needs.
-
-### Handle Errors Gracefully
-
-Configure the **onEvent** callback in production to log or track errors. See [Configuration](configuration.html#onevent).
+```bash
+yarn add @unbxd-ui/autosuggest-js-sdk
+```
 
 ---
 
-## Complete Example
-```js
+### Import the SDK
+
+After installation, import the Autosuggest class into your project:
+
+```javascript
+import { Autosuggest } from "@unbxd-ui/autosuggest-js-sdk";
+```
+
+---
+
+### Initialize Autosuggest
+
+Instantiate the Autosuggest object and bind it to your search input element:
+
+```javascript
 const autosuggest = new Autosuggest({
-    siteKey: "ss-unbxd-aus-demo-fashion831421736321881",
-    apiKey: "1ccbb7fcb0faf770d1c228be80ba16d9",
+  siteKey: "your-site-key",
+  apiKey: "your-api-key",
 
-    inputBoxConfigs: {
-        searchInput: ".search-input",
-        debounceDelay: 500,
-        minChars: 3,
-    },
+  inputBoxConfigs: {
+    searchInput: ".search-input",
+    debounceDelay: 300,
+    minChars: 2,
+  },
 
-    suggestionBoxConfigs: {
-        containerTag: "div",
-        attributes: {
-            class: ["search-input", "unbxd-autosuggest-box"],
-            "data-testid": "search-input",
-            id: "search-id"
-        },
-        template: null, // or a custom template function
-    },
+  apiConfigs: {...},
 
-    apiConfigs: {
-        apiEndpoint: "https://search.unbxd.io",
-        initialRequest: false,
-        inFields: { count: 2 },
-        popularProducts: { count: 3, fields: [] },
-        keywordSuggestions: { count: 2 },
-        topQueries: { count: 2 },
-        promotedSuggestions: { count: 2 },
-        trendingSearches: { count: 5 },
-    },
-
-    onEvent: ({ eventType }) => {
-        console.log("Autosuggest event:", eventType);
-    }
+  suggestionBoxConfigs: {...},
 });
 ```

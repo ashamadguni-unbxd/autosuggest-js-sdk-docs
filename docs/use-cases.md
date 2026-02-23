@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Use cases
-nav_order: 6
+nav_order: 5
 permalink: /use-cases.html
 ---
 
@@ -22,23 +22,11 @@ This section provides practical implementation scenarios for the Autosuggest JS 
 
 ## Use Case 1: Focused Autosuggest with Initial Request and Trending Searches
 
-This use case demonstrates how to configure the new Autosuggest JS SDK to provide a discovery-first search experience by displaying suggestions immediately when the search input gains focus.
+This use case demonstrates how to configure the Autosuggest JS SDK to display suggestions immediately when the search input gains focus.
 
-By enabling `initialRequest` and `trendingSearches`, the SDK fetches and displays popular search terms even before the user begins typing. This approach improves engagement and supports product discovery by highlighting trending queries.
+By enabling initialRequest and trendingSearches, popular search terms are shown before the user begins typing, supporting early engagement and discovery.
 
 ![Use case 1: Trending searches on focus — suggestions appear on focus, then update as you type]({{ 'assets/images/demo-1.gif' | relative_url }})
-
----
-
-**Configuration Overview**
-
-This behavior is achieved using the following API configuration options:
-
-- **`initialRequest: true`**  
-  Triggers an API request as soon as the search input receives focus, without requiring user input.
-
-- **`trendingSearches`**  
-  Enables trending search terms in the autosuggest response and allows configuration of the number of results to display.
 
 ---
 
@@ -84,23 +72,10 @@ const autosuggest = new Autosuggest({
 
 ## Use Case 2: Initial Request Enabled with Trending Searches Disabled
 
-This use case demonstrates how to configure the Autosuggest JS SDK to trigger suggestions on input focus while excluding trending searches from the response.
-
-By enabling `initialRequest` and disabling `trendingSearches`, the SDK retrieves suggestions immediately when the search input gains focus, but limits the response to configured suggestion types such as top queries, keyword suggestions, in-fields, or products.
+Demonstrates triggering suggestions on input focus without trending searches.
+With initialRequest enabled and trendingSearches disabled, only the configured suggestion types are returned.
 
 ![Use case 2: Intial Request on focus — suggestions appear on focus, then update as you type]({{ 'assets/images/demo-2.gif' | relative_url }})
-
----
-
-**Configuration Overview**
-
-This behavior is achieved using the following API configuration options:
-
-- **`initialRequest: true`**  
-  Initiates an API request when the search input receives focus, without requiring user input.
-
-- **`trendingSearches: false`**  
-  Disables trending search terms in the autosuggest response.
 
 ---
 
@@ -141,3 +116,85 @@ const autosuggest = new Autosuggest({
   },
 });
 ```
+
+### Custom Template Implementation
+
+The following example demonstrates a custom autosuggest template used in this use case.  
+It renders suggestions, trending searches, and popular products in a structured layout.
+
+```javascript
+import CustomPopularProducts from "./popularProducts.js";
+import CustomSuggestionsBox from "./suggestionsBox.js";
+import CustomTrendingQueries from "./trendingQueries.js";
+
+function CustomAutoSuggestionBox(props) {
+  const {
+    query,
+    response: {
+      inFields = [],
+      keywordSuggestions = [],
+      promotedSuggestions = [],
+      topSearchQueries = [],
+      trendingSearches = [],
+      popularProducts = [],
+      initialRequestProducts = []
+    } = {}
+  } = props;
+
+  const products =
+    popularProducts.length > 0
+      ? popularProducts
+      : initialRequestProducts || [];
+
+  const suggestionsFields = [
+    { title: "Recent Searches", items: inFields },
+    { title: "Suggestions", items: keywordSuggestions },
+    { title: "Promoted Suggestions", items: promotedSuggestions },
+    { title: "Top Search Queries", items: topSearchQueries },
+  ];
+
+  const trendingHTML = trendingSearches?.length
+    ? `<div class="unbxd-autosuggest-box-trending-searches">
+         ${CustomTrendingQueries(trendingSearches)}
+       </div>`
+    : "";
+
+  const isSuggestions =
+    inFields?.length > 0 ||
+    keywordSuggestions?.length > 0 ||
+    promotedSuggestions?.length > 0 ||
+    topSearchQueries?.length > 0;
+
+  const suggestionsHTML = isSuggestions
+    ? `<div class="unbxd-autosuggest-box-suggestions">
+         ${CustomSuggestionsBox(suggestionsFields, query)}
+       </div>`
+    : "";
+
+  const suggestionsAndTrendingHTML =
+    isSuggestions || trendingSearches?.length > 0
+      ? `<div class="unbxd-autosuggest-box-suggestions-and-trending-searches">
+           ${suggestionsHTML}
+           ${trendingHTML}
+         </div>`
+      : "";
+
+  return `
+    <div class="unbxd-auto-suggestion-box">
+      ${suggestionsAndTrendingHTML}
+      <div class="unbxd-autosuggest-box-right-column">
+        <div class="unbxd-autosuggest-box-popular-products-section">
+          Products
+        </div>
+        ${CustomPopularProducts(products)}
+      </div>
+    </div>
+  `;
+}
+
+export default CustomAutoSuggestionBox;
+```
+
+> Note: `CustomPopularProducts`, `CustomSuggestionsBox`, and `CustomTrendingQueries`
+> are helper modules responsible for rendering specific sections of the autosuggest UI.
+> Their implementations can be customized based on your design requirements.
