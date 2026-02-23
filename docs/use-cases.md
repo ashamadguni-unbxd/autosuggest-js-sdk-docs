@@ -80,3 +80,64 @@ const autosuggest = new Autosuggest({
 });
 ```
 
+---
+
+## Use Case 2: Initial Request Enabled with Trending Searches Disabled
+
+This use case demonstrates how to configure the Autosuggest JS SDK to trigger suggestions on input focus while excluding trending searches from the response.
+
+By enabling `initialRequest` and disabling `trendingSearches`, the SDK retrieves suggestions immediately when the search input gains focus, but limits the response to configured suggestion types such as top queries, keyword suggestions, in-fields, or products.
+
+![Use case 2: Intial Request on focus — suggestions appear on focus, then update as you type]({{ 'assets/images/demo-2.gif' | relative_url }})
+
+---
+
+### Configuration Overview
+
+This behavior is achieved using the following API configuration options:
+
+- **`initialRequest: true`**  
+  Initiates an API request when the search input receives focus, without requiring user input.
+
+- **`trendingSearches: false`**  
+  Disables trending search terms in the autosuggest response.
+
+---
+
+### Implementation Example
+
+```javascript
+const autosuggest = new Autosuggest({
+  siteKey: "your-site-key",
+  apiKey: "your-api-key",
+
+  inputBoxConfigs: {
+    searchInput: ".search-input",
+    debounceDelay: 300,
+    minChars: 2,
+  },
+
+  suggestionBoxConfigs: {
+    containerTag: "div",
+    attributes: {
+      class: ["unbxd-autosuggest-box"],
+    },
+    template: MyCustomTemplate,
+  },
+
+  apiConfigs: {
+    apiEndpoint: "https://search.unbxd.io",
+    initialRequest: true,
+    trendingSearches: false,
+    topQueries: { count: 5 },
+    keywordSuggestions: { count: 3 },
+    inFields: { count: 2 },
+    popularProducts: { count: 2, fields: [] },
+    promotedSuggestions: { count: 2 },
+  },
+
+  onEvent: ({ eventType }) => {
+    console.log("Autosuggest event:", eventType);
+  },
+});
+```
