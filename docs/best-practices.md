@@ -1,18 +1,18 @@
 ---
 layout: default
 title: Best Practices
-nav_order: 5
+nav_order: 6
 ---
 
 # Best Practices
 
-The following guidelines help ensure optimal performance, reliability, and user experience when using the Autosuggest JS SDK in production environments.
+This section provides recommendations for performance, reliability, and user experience when using the New Autosuggest SDK in production.
 
 ---
 
 ### Debouncing
 
-Debouncing helps control how frequently Autosuggest API calls are made while the user is typing.
+Debouncing helps control how frequently new Autosuggest SDK API calls are made while the user is typing.
 
 - A `debounceDelay` of **300–500 milliseconds** is recommended for most use cases.
 - This improves performance and reduces unnecessary API calls.
@@ -23,7 +23,7 @@ Debouncing helps control how frequently Autosuggest API calls are made while the
 
 ### Minimum Characters
 
-The `minChars` configuration determines when Autosuggest API calls are triggered.
+The `minChars` configuration determines when new Autosuggest SDK API calls are triggered.
 
 - A value of **2 or 3 characters** is recommended for a balanced user experience.
 - Lower values may result in excessive API calls.
@@ -45,7 +45,7 @@ Each suggestion type supports configurable `count` values.
 
 Custom templates allow you to fully control the look and structure of the autosuggestion UI.
 
-- Use custom templates to align Autosuggest UI with your site’s design system.
+- Use custom templates to align the new Autosuggest SDK UI with your site’s design system.
 - The template function receives all suggestion data as props.
 - Always return a valid HTML string from the template function.
 
@@ -55,7 +55,7 @@ Custom templates allow you to fully control the look and structure of the autosu
 
 Proper error handling is critical for production applications.
 
-- Always provide an `onError` callback in production.
+- Always provide an **onEvent** callback in production when you need to handle errors or track events.
 - Log errors for debugging and monitoring.
 - Consider integrating with an error tracking or observability service to capture failures in real time.
 
@@ -63,7 +63,7 @@ Proper error handling is critical for production applications.
 
 ### API Endpoint
 
-The Autosuggest SDK uses a default API endpoint.
+The New Autosuggest SDK uses a default API endpoint.
 
 - Use the default endpoint unless you have a custom deployment or setup.
 - Ensure the endpoint is accessible from your domain and environment.
@@ -72,7 +72,7 @@ The Autosuggest SDK uses a default API endpoint.
 
 ### Attributes
 
-The `attributes` configuration allows you to attach HTML attributes to the autosuggestion container.
+The **attributes** option (under `suggestionBoxConfigs`) allows you to attach HTML attributes to the autosuggestion container. See [Configuration](configuration.html#suggestionboxconfigs).
 
 - Useful for applying CSS classes, IDs, and data attributes.
 - Helps with styling, testing, and DOM querying.
