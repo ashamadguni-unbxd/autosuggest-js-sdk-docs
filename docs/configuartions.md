@@ -93,7 +93,7 @@ Required
 
 A unique identifier assigned by Unbxd to each site created in the Unbxd Console dashboard. It is required to associate new Autosuggest SDK API requests with the correct site. Refer to the [Unbxd documentation](https://docs.netcoreunbxd.com/docs/getting-started) for steps to retrieve the Site Key for your account.
 
-### Default
+#### Default
 {: .no_toc }
 
 ```js
@@ -111,7 +111,7 @@ Required
 
 A unique API Key assigned to each site created in the Unbxd Console dashboard. Refer to the [Unbxd documentation](https://docs.netcoreunbxd.com/docs/getting-started) for steps to retrieve the API Key for your account.
 
-### Default
+#### Default
 {: .no_toc }
 
 ```js
@@ -137,7 +137,7 @@ Behavior and performance options that control **when** new Autosuggest SDK API c
 | `minChars` | Number | No | `3` | Minimum number of characters in the input before triggering an Autosuggest API call. Prevents fetching suggestions too early. The API is only called when input length is greater than or equal to this value. |
 
 
-### Default
+#### Default
 {: .no_toc }
 
 ```js
@@ -167,7 +167,7 @@ Container and DOM configuration options allow you to control **how and where** t
 | `template` | Function \| null | No | `null` | Custom template function used to render the autosuggestion container. For details, examples, and template props, see [Template](configurations/template.html). |
 
 
-### Default
+#### Default
 {: .no_toc }
 
 ```js
@@ -189,7 +189,7 @@ Optional
 
 The API configuration controls how the new Autosuggest SDK communicates with the Unbxd backend. It allows you to define the API endpoint and fine-tune the **types and number of suggestions** fetched for each request. These settings help tailor the new Autosuggest SDK experience to match business priorities and user behavior.
 
-### apiConfigs options
+#### apiConfigs options
 {: .no_toc }
 
 | Option | Type | Default | Description |
@@ -203,7 +203,7 @@ The API configuration controls how the new Autosuggest SDK communicates with the
 | `promotedSuggestions` | Object | `{ count: 2 }` | **Promoted suggestions** — keywords or results boosted by merchandising rules in the Unbxd Console. **`count`**: number to fetch. |
 | `trendingSearches` | Object | `{ count: 5 }` | **Trending search** suggestions. **`count`**: number of trending searches to fetch. |
 
-### Default
+#### Default
 {: .no_toc }
 
 ```js
@@ -219,7 +219,7 @@ apiConfigs: {
 }
 ```
 
-### Example
+#### Example
 {: .no_toc }
 
 ```js
@@ -249,7 +249,7 @@ Useful for logging, analytics integration, error handling, or debugging.
 
 The function receives an object containing at least **`eventType`**.
 
-### Default
+#### Default
 {: .no_toc }
 
 ```js
@@ -258,12 +258,12 @@ onEvent: function ({ eventType }) {
 }
 ```
 
-### Parameters
+#### Parameters
 {: .no_toc }
 
 - **eventType** — A string identifying the lifecycle event.
 
-### Example
+#### Example
 {: .no_toc }
 
 ```js

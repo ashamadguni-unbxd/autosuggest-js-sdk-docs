@@ -118,6 +118,7 @@ const autosuggest = new Autosuggest({
 ```
 
 ### Custom Template Implementation
+{: .no_toc }
 
 The following example demonstrates a custom autosuggest template used in this use case.  
 It renders suggestions, trending searches, and popular products in a structured layout.
