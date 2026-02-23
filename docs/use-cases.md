@@ -92,7 +92,7 @@ By enabling `initialRequest` and disabling `trendingSearches`, the SDK retrieves
 
 ---
 
-#### Configuration Overview
+### Configuration Overview
 
 This behavior is achieved using the following API configuration options:
 
@@ -104,7 +104,7 @@ This behavior is achieved using the following API configuration options:
 
 ---
 
-#### Implementation Example
+### Implementation Example
 
 ```javascript
 const autosuggest = new Autosuggest({
