@@ -22,7 +22,7 @@ Built with modern JavaScript and designed to work seamlessly **without jQuery or
 </div>
 
 {: .important }
-> ###IMPORTANT
+> ### IMPORTANT
 > This documentation is intended for customers using the new version of the Autosuggest JS SDK (V2 integrations).
 > If you are using the previous version of the Autosuggest SDK, please refer to the  
 > [Legacy Autosuggest SDK Documentation](https://ashamadguni-unbxd.github.io/autosuggest-js-sdk-docs/).
