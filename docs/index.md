@@ -83,15 +83,16 @@ Supported suggestion types include:
 - **Improves search usability** — Enhances the search experience by helping users refine queries efficiently as they type.
 - **Framework-agnostic** — Works seamlessly with any frontend framework or vanilla JavaScript applications.
 
+---
+
+## Stay up to date
+
+Please refer to the [changelog](changelog.html) to stay informed about the most recent releases and bug fixes, and to track the history of changes.
 
 ---
 
-## Quick links
+## Follow these best practices
 
-- [Installation](installation.html)
-- [Getting Started](getting-started.html)
-- [Changelogs](changelog.html)
-- [Configurations](configurations.html)
-- [Usecases](usecases.html)
-- [Best Practices](best-practices.html)
-- [FAQs](faqs.html)
+Please refer and follow these [Best practices](best-practices.html) to have performant usage of the SDK.
+
+

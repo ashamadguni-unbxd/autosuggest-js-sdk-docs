@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Configurations
-nav_order: 4
+nav_order: 5
 has_children: true
 permalink: /configurations.html
 ---
@@ -14,16 +14,16 @@ Core options authenticate requests with Unbxd, bind the SDK to a search input, a
 
 ---
 
-## Top-level options
+## Configuration Options
 
-| Option | Type | Required | Description |
-|--------|------|----------|-------------|
-| `siteKey` | String | Yes | Unbxd site identifier. |
-| `apiKey` | String | Yes | Unbxd API key for the site. |
-| `inputBoxConfigs` | Object | No | Input element and request behavior. |
-| `suggestionBoxConfigs` | Object | No | Container element and template. |
-| `apiConfigs` | Object | No | API endpoint and suggestion counts. |
-| `onEvent` | Function | No | Lifecycle event callback. |
+| Option | Type | Required | Default | Description |
+|--------|------|----------|---------|-------------|
+| `siteKey` | String | Yes | `""` | Unique identifier for your Unbxd site. Used to associate all Autosuggest API requests with the correct site. Obtain it from the Unbxd Console. |
+| `apiKey` | String | Yes | `""` | API key for your Unbxd site. Used to authenticate requests to the Autosuggest API. Obtain it from the Unbxd Console. |
+| `inputBoxConfigs` | Object | No | — | Configuration for the search input and request behavior: CSS selector for the input, debounce delay, minimum characters before fetching suggestions, and related options. |
+| `suggestionBoxConfigs` | Object | No | — | Configuration for the suggestion dropdown: container tag, HTML attributes, and an optional custom template function for rendering each suggestion. |
+| `apiConfigs` | Object | No | — | API endpoint URL and per-type suggestion counts (in-fields, popular products, keyword suggestions, top queries, promoted suggestions, trending searches). |
+| `onEvent` | Function | No | — | Callback invoked for SDK lifecycle events (e.g. open, close, select). Use for logging, analytics, or error handling in production. |
 
 ---
 
@@ -80,60 +80,11 @@ inputBoxConfigs: {
 }
 ```
 
-### inputBoxConfigs.searchInput
-{: .d-inline-block }
-String | null
-{: .label }
-Required
-{: .label .label-red }
-
-Specifies the CSS selector of the input element where the new Autosuggest SDK should be enabled. The SDK queries the DOM using this selector and attaches autosuggest behavior to the matched element.
-
-```js
-inputBoxConfigs: {
-  searchInput: ".input-search"
-}
-```
-
-```js
-inputBoxConfigs: {
-  searchInput: "#search-box"
-}
-```
-
-### inputBoxConfigs.debounceDelay
-{: .d-inline-block }
-Number
-{: .label }
-Optional
-{: .label .label-blue }
-
-Specifies the delay (in milliseconds) to wait after the user stops typing before triggering the new Autosuggest SDK API call. This helps reduce the number of API requests made during rapid typing.
-
-**Note:** A value of `0` disables debouncing, meaning the new Autosuggest SDK API will be called on every input change once the `minChars` threshold is met.
-
-```js
-inputBoxConfigs: {
-  debounceDelay: 500
-}
-```
-
-### inputBoxConfigs.minChars
-{: .d-inline-block }
-Number
-{: .label }
-Optional
-{: .label .label-blue }
-
-Defines the minimum number of characters required in the input field before triggering a new Autosuggest SDK API call. This prevents suggestions from being fetched too early and helps improve overall performance.
-
-**Note:** The new Autosuggest SDK API will only be called when the input length is greater than or equal to the specified `minChars` value.
-
-```js
-inputBoxConfigs: {
-  minChars: 2
-}
-```
+| Option | Type | Required | Default | Description |
+|--------|------|----------|---------|-------------|
+| `searchInput` | String \| null | Yes | `null` | CSS selector for the input element where the SDK should be enabled. The SDK queries the DOM with this selector and attaches autosuggest behavior to the matched element (e.g. `".input-search"`, `"#search-box"`). |
+| `debounceDelay` | Number | No | `0` | Delay in milliseconds after the user stops typing before triggering an Autosuggest API call. Reduces requests during rapid typing. A value of `0` disables debouncing (API is called on every input change once `minChars` is met). |
+| `minChars` | Number | No | `3` | Minimum number of characters in the input before triggering an Autosuggest API call. Prevents fetching suggestions too early. The API is only called when input length is greater than or equal to this value. |
 
 ---
 
@@ -156,50 +107,11 @@ suggestionBoxConfigs: {
 }
 ```
 
-### suggestionBoxConfigs.containerTag
-{: .d-inline-block }
-String
-{: .label }
-Optional
-{: .label .label-blue }
-
-Defines the HTML tag used to create the autosuggestion container element. This allows you to choose a semantic HTML tag that best fits your layout or accessibility requirements.
-
-```js
-suggestionBoxConfigs: {
-  containerTag: "section"
-}
-```
-
-### suggestionBoxConfigs.attributes
-{: .d-inline-block }
-Object
-{: .label }
-Optional
-{: .label .label-blue }
-
-Specifies the HTML attributes that should be applied to the autosuggestion container element. This is useful for adding CSS classes, IDs, test identifiers, or custom data attributes required by your application.
-
-**Note:** Array values (such as `class`) will be handled appropriately by the SDK.
-
-```js
-suggestionBoxConfigs: {
-  attributes: {
-    "class": ["search-input", "unbxd-autosuggest-box"],
-    "data-testid": "search-input",
-    "id": "search-id"
-  }
-}
-```
-
-### suggestionBoxConfigs.template
-{: .d-inline-block }
-Function | null
-{: .label }
-Optional
-{: .label .label-blue }
-
-Defines a custom template function used to render the autosuggestion container. For details, examples, and template props, see [Template](configurations/template.html).
+| Option | Type | Required | Default | Description |
+|--------|------|----------|---------|-------------|
+| `containerTag` | String | No | `"div"` | HTML tag used for the autosuggestion container element (e.g. `"div"`, `"section"`). Choose a tag that fits your layout or accessibility needs. |
+| `attributes` | Object | No | `{}` | HTML attributes applied to the container (e.g. `class`, `id`, `data-testid`). Useful for CSS classes, test IDs, or custom data attributes. Array values (e.g. for `class`) are supported. |
+| `template` | Function \| null | No | `null` | Custom template function used to render the autosuggestion container. For details, examples, and template props, see [Template](configurations/template.html). |
 
 ---
 
@@ -308,21 +220,3 @@ const autosuggest = new Autosuggest({
   },
 });
 ```
-
----
-
-## Minimal required configuration
-
-The following configuration represents the minimum setup required to initialize the New Autosuggest SDK:
-
-```js
-const autosuggest = new Autosuggest({
-  siteKey: "your-site-key",
-  apiKey: "your-api-key",
-  inputBoxConfigs: {
-    searchInput: ".search-input"
-  }
-});
-```
-
-All other options use their default values.
