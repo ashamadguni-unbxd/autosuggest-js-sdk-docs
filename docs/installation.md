@@ -7,7 +7,7 @@ nav_order: 2
 # Installation
 {: .no_toc }
 
-This section describes the steps required to include the Autosuggest JS SDK and its default styles in your application.
+This section describes the steps required to include the New Autosuggest SDK and its default styles in your application.
 
 ---
 
@@ -19,25 +19,25 @@ This section describes the steps required to include the Autosuggest JS SDK and 
 
 ---
 
-## Prerequisite
+## Prerequisites
 
-Before proceeding with the installation of the Autosuggest JS SDK, you must complete the initial onboarding and configuration of your Unbxd account through the Self Serve Dashboard. This setup includes account registration, site creation, feed upload, and relevancy configuration, which are required for the SDK to function correctly.
+Before installing the New Autosuggest SDK, complete the initial onboarding and configuration of your Unbxd account in the Self Serve Dashboard. Required steps include account registration, site creation, feed upload, and relevancy configuration.
 
-Detailed guidance on completing the onboarding process is available in the Self Serve Dashboard documentation:
-[Self Serve Dashboard Documentation](https://unbxd.com/docs/site-search/integration-documentation/onboarding-flow/)
-
+For detailed guidance, see the [Self Serve Dashboard Documentation](https://unbxd.com/docs/site-search/integration-documentation/onboarding-flow/).
 
 ---
 
 ## SDK Integration
 
-Include the Vanilla JavaScript Search library by adding the following script tag to your HTML file:
+Add the New Autosuggest SDK by including the following script tag in your HTML:
 
-```js
-    <script src="https://libraries.unbxdapi.com/search-sdk/v1/autosuggest.min.js"></script>
+```html
+<script src="https://libraries.unbxdapi.com/search-sdk/v<<latest-version>>/autosuggest.min.js"></script>
 ```
 
-  The latest available version of the library can be identified from the npm repository for the Search JS library or from the official ChangeLog.
+The latest version identifier is available in the [new autosuggest js library](https://www.npmjs.com/package/@unbxd-ui/autosuggest-js-sdk) or the [Changelogs](changelog.html) for this SDK.
+
+To use the default search UI styles, include the following stylesheet:
 
 To apply the default Search UI styles, include the corresponding stylesheet using the following link tag:
 ```js
