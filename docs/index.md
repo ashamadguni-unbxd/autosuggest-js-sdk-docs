@@ -69,7 +69,7 @@ Supported suggestion types include:
 
 ## Why use the Autosuggest JS SDK?
 
-- **Lightweight** — Designed with a minimal footprint to ensure fast load times and optimal performance.
+- **Lightweight** — Designed with a minimal footprint, built **without jQuery or external dependencies**, ensuring fast load times and optimal performance.
 - **Simple integration** — Easily integrates with plain JavaScript and does not require a build step or additional tooling.
 - **Configurable** — Offers flexible configuration options along with event callbacks to customize behavior and UI interactions.
 - **Improves search usability** — Enhances the search experience by helping users refine queries efficiently as they type.
@@ -86,16 +86,3 @@ Supported suggestion types include:
 - [Best Practices](best-practices.html)
 - [FAQs](faqs.html)
 
----
-
-## Get Started
-
-To start using Autosuggest:
-
-1. Include the Autosuggest JS SDK script
-2. Configure your site and API details
-3. Attach autosuggest to your search input
-
-You can set up a working autosuggest experience in just a few minutes.
-
-👉 Continue to the **[Installation](installation.html)** guide to begin.
