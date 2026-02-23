@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Getting Started
-nav_order: 3
+# nav_order: 3
 ---
 
 # Getting Started
@@ -19,7 +19,7 @@ nav_order: 3
 
 ## Prerequisite
 
-Before integrating the Autosuggest SDK, ensure the following:
+Before integrating the new Autosuggest SDK, ensure the following:
 
 - You have completed the **self-serve FTU flow**
 - Your feed is successfully uploaded and indexed
@@ -33,7 +33,7 @@ Before integrating the Autosuggest SDK, ensure the following:
 
 ## Integration Instructions
 
-Follow these steps to integrate Autosuggest into your site.
+Follow these steps to integrate the new Autosuggest SDK into your site.
 
 ### Configure Site Credentials
 
@@ -44,14 +44,9 @@ siteKey: "<<site key>>",
 apiKey: "<<api key>>"
 ```
 
-### Attach Autosuggest to Search Input
+### Attach the New Autosuggest SDK to Search Input
 
-Provide a valid CSS selector or DOM element for the search input field.
-
-```js
-searchInput: ".search-input"
-```
-This is mandatory for Autosuggest to initialize.
+Provide a valid CSS selector for the search input via `inputBoxConfigs.searchInput`. This is mandatory for the new Autosuggest SDK to initialize. See [Configuration](configuration.html#inputboxconfigs) for all options.
 
 ### Customize API Configuration
 
@@ -67,45 +62,45 @@ These should be adjusted based on UI space and performance needs.
 
 ### Handle Errors Gracefully
 
-Always configure an `onError` callback in production environments to log or track errors.
+Configure the **onEvent** callback in production to log or track errors. See [Configuration](configuration.html#onevent).
 
 ---
 
 ## Complete Example
 ```js
 const autosuggest = new Autosuggest({
-    // Basic Configuration
     siteKey: "ss-unbxd-aus-demo-fashion831421736321881",
     apiKey: "1ccbb7fcb0faf770d1c228be80ba16d9",
-    searchInput: ".search-input",
-    containerTag: "div",
 
-    attributes: {
-        class: ["search-input", "unbxd-autosuggest-box"],
-        "data-testid": "search-input",
-        id: "search-id"
+    inputBoxConfigs: {
+        searchInput: ".search-input",
+        debounceDelay: 500,
+        minChars: 3,
     },
-    // Note: Array values (like class) will be handled appropriately by the SDK.
 
-    debounceDelay: 500,
-    minChars: 3,
-    template: AutosuggestionBoxTemplate, // or a custom template function
+    suggestionBoxConfigs: {
+        containerTag: "div",
+        attributes: {
+            class: ["search-input", "unbxd-autosuggest-box"],
+            "data-testid": "search-input",
+            id: "search-id"
+        },
+        template: null, // or a custom template function
+    },
 
-    // API Configuration
-    api: {
+    apiConfigs: {
         apiEndpoint: "https://search.unbxd.io",
+        initialRequest: false,
         inFields: { count: 2 },
-        popularProducts: { count: 3 },
+        popularProducts: { count: 3, fields: [] },
         keywordSuggestions: { count: 2 },
         topQueries: { count: 2 },
-        promotedSuggestions: { count: 2 }
+        promotedSuggestions: { count: 2 },
+        trendingSearches: { count: 5 },
     },
 
-    // Callback Configuration
-    callbacks: {
-        onError: (error) => {
-            console.error("Autosuggest error:", error);
-        }
+    onEvent: ({ eventType }) => {
+        console.log("Autosuggest event:", eventType);
     }
 });
 ```
@@ -113,28 +108,32 @@ const autosuggest = new Autosuggest({
 ---
 
 ## Default Configuration
-If no configuration is provided, the SDK falls back to the following defaults:
+If no configuration is provided, the SDK falls back to the defaults defined in `src/constants/options.js`. See [Configuration](configuration.html) for the full reference.
 
 ```js
 {
     siteKey: "",
     apiKey: "",
-    searchInput: null,
-    containerTag: "div",
-    attributes: {},
-    debounceDelay: 0,
-    minChars: 3,
-    template: AutosuggestionBoxTemplate,
-    api: {
+    inputBoxConfigs: {
+        searchInput: null,
+        debounceDelay: 0,
+        minChars: 3,
+    },
+    suggestionBoxConfigs: {
+        containerTag: "div",
+        attributes: {},
+        template: null,
+    },
+    apiConfigs: {
         apiEndpoint: "https://search.unbxd.io",
+        initialRequest: false,
         inFields: { count: 2 },
-        popularProducts: { count: 3 },
+        popularProducts: { count: 3, fields: [] },
         keywordSuggestions: { count: 2 },
         topQueries: { count: 2 },
-        promotedSuggestions: { count: 2 }
+        promotedSuggestions: { count: 2 },
+        trendingSearches: { count: 5 },
     },
-    callbacks: {
-        onError: null
-    }
+    onEvent: function ({ eventType }) { ... }
 }
 ```
