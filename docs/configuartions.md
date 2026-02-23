@@ -18,7 +18,6 @@ permalink: /configurations.html
 ---
 
 ## Overview
-{: .no_toc }
 
 The Autosuggest JS SDK provides a flexible configuration model that allows developers to control behavior, API response types, UI rendering, and event handling.
 
@@ -34,7 +33,6 @@ These configuration options enable fine-grained control over how autosuggest beh
 ---
 
 ## Usage
-{: .no_toc }
 
 All configurations are provided when instantiating the `Autosuggest` class.
 
