@@ -18,8 +18,8 @@ permalink: /changelog.html
 
 - **Release date:** Initial release
 - **Core SDK Version:** v1.0.0
-- **Script:** <https://libraries.unbxdapi.com/search-sdk/v1/autosuggest.min.js>
-- **CSS (optional):** <https://libraries.unbxdapi.com/search-sdk/v1/vanillaSearch.min.css>
+- **CDN Link:** <https://libraries.unbxdapi.com/search-sdk/v1/autosuggest.min.js>
+- **CSS Link:** <https://libraries.unbxdapi.com/search-sdk/v1/vanillaSearch.min.css>
 
 ### Features
 
