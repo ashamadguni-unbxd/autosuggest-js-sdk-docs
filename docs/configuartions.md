@@ -9,7 +9,16 @@ permalink: /configurations.html
 # Configurations
 {: .no_toc }
 
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
 ## Overview
+{: .no_toc }
 
 The Autosuggest JS SDK provides a flexible configuration model that allows developers to control behavior, API response types, UI rendering, and event handling.
 
@@ -24,15 +33,8 @@ These configuration options enable fine-grained control over how autosuggest beh
 
 ---
 
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
----
-
 ## Usage
+{: .no_toc }
 
 All configurations are provided when instantiating the `Autosuggest` class.
 
@@ -40,31 +42,39 @@ All configurations are provided when instantiating the `Autosuggest` class.
 import Autosuggest from "@unbxd-ui/autosuggest-js-sdk";
 
 const autosuggest = new Autosuggest({
-  siteKey: "your-site-key",
-  apiKey: "your-api-key",
+    siteKey: "ss-unbxd-aus-demo-fashion831421736321881",
+    apiKey: "1ccbb7fcb0faf770d1c228be80ba16d9",
 
-  inputBoxConfigs: {
-    searchInput: ".search-input",
-    debounceDelay: 300,
-    minChars: 2,
-  },
-
-  apiConfigs: {
-    apiEndpoint: "https://search.unbxd.io",
-    initialRequest: false,
-    trendingSearches: false,
-  },
-
-  suggestionBoxConfigs: {
-    containerTag: "div",
-    attributes: {
-      class: ["unbxd-autosuggest-box"],
+    inputBoxConfigs: {
+        searchInput: ".search-input",
+        debounceDelay: 500,
+        minChars: 3,
     },
-  },
 
-  onEvent: ({ eventType, payload }) => {
-    console.log("Autosuggest event:", eventType, payload);
-  },
+    suggestionBoxConfigs: {
+        containerTag: "div",
+        attributes: {
+            class: ["search-input", "unbxd-autosuggest-box"],
+            "data-testid": "search-input",
+            id: "search-id"
+        },
+        template: null, // or a custom template function
+    },
+
+    apiConfigs: {
+        apiEndpoint: "https://search.unbxd.io",
+        initialRequest: false,
+        inFields: { count: 2 },
+        popularProducts: { count: 3, fields: [] },
+        keywordSuggestions: { count: 2 },
+        topQueries: { count: 2 },
+        promotedSuggestions: { count: 2 },
+        trendingSearches: { count: 5 },
+    },
+
+    onEvent: ({ eventType }) => {
+        console.log("Autosuggest event:", eventType);
+    }
 });
 ```
 
@@ -74,7 +84,7 @@ Each configuration section is documented below with detailed options, accepted v
 
 ## Configuration Properties
 
-## siteKey
+### siteKey
 {: .d-inline-block }
 String
 {: .label }
@@ -92,7 +102,7 @@ siteKey: ""
 
 ---
 
-## apiKey
+### apiKey
 {: .d-inline-block }
 String
 {: .label }
@@ -110,7 +120,7 @@ apiKey: ""
 
 ---
 
-## inputBoxConfigs
+### inputBoxConfigs
 {: .d-inline-block }
 Object
 {: .label }
@@ -140,7 +150,7 @@ inputBoxConfigs: {
 
 ---
 
-## suggestionBoxConfigs
+### suggestionBoxConfigs
 {: .d-inline-block }
 Object
 {: .label }
@@ -170,7 +180,7 @@ suggestionBoxConfigs: {
 
 ---
 
-## apiConfigs
+### apiConfigs
 {: .d-inline-block }
 Object
 {: .label }
@@ -227,7 +237,7 @@ apiConfigs: {
 
 ---
 
-## onEvent
+### onEvent
 {: .d-inline-block }
 Function
 {: .label }

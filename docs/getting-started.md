@@ -35,13 +35,13 @@ These credentials are required to authenticate and fetch autosuggest results.
 
 Install the Autosuggest JS SDK package:
 
-```bash
+```js
 npm install @unbxd-ui/autosuggest-js-sdk
 ```
 
 or using Yarn:
 
-```bash
+```js
 yarn add @unbxd-ui/autosuggest-js-sdk
 ```
 
