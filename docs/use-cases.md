@@ -30,7 +30,7 @@ By enabling `initialRequest` and `trendingSearches`, the SDK fetches and display
 
 ---
 
-### Configuration Overview
+#### Configuration Overview
 
 This behavior is achieved using the following API configuration options:
 
@@ -42,7 +42,7 @@ This behavior is achieved using the following API configuration options:
 
 ---
 
-### Implementation Example
+#### Implementation Example
 
 ```javascript
 const autosuggest = new Autosuggest({
@@ -92,7 +92,7 @@ By enabling `initialRequest` and disabling `trendingSearches`, the SDK retrieves
 
 ---
 
-### Configuration Overview
+#### Configuration Overview
 
 This behavior is achieved using the following API configuration options:
 
@@ -104,7 +104,7 @@ This behavior is achieved using the following API configuration options:
 
 ---
 
-### Implementation Example
+#### Implementation Example
 
 ```javascript
 const autosuggest = new Autosuggest({
@@ -128,7 +128,7 @@ const autosuggest = new Autosuggest({
   apiConfigs: {
     apiEndpoint: "https://search.unbxd.io",
     initialRequest: true,
-    trendingSearches: false,
+    trendingSearches: { count: 0 },
     topQueries: { count: 5 },
     keywordSuggestions: { count: 3 },
     inFields: { count: 2 },
