@@ -21,12 +21,15 @@ Built with modern JavaScript and designed to work seamlessly **without jQuery or
   </a>
 </div>
 
-> ⚠️ **Legacy Autosuggest SDK**
+{: .important }
+> **IMPORTANT**
 >
-> If you are using the previous version of the Autosuggest SDK, you can access its documentation here:  
-> https://ashamadguni-unbxd.github.io/autosuggest-js-sdk-docs/
+> This documentation is intended for customers using the new version of the Autosuggest JS SDK (V2 integrations).
 >
-> For new integrations, we recommend using the latest Autosuggest JS SDK for improved performance, flexibility, and modern JavaScript support.
+> If you are using the previous version of the Autosuggest SDK, please refer to the  
+> [Legacy Autosuggest SDK Documentation](https://ashamadguni-unbxd.github.io/autosuggest-js-sdk-docs/).
+>
+> As part of our upgrade process, the older version will be gradually deprecated.
 
 ---
 
