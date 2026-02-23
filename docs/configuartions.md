@@ -1,15 +1,16 @@
 ---
 layout: default
-title: Configuration
+title: Configurations
 nav_order: 4
-permalink: /configuration.html
+has_children: true
+permalink: /configurations.html
 ---
 
-# Configuration
+# Configurations
 
-All configuration options are provided when initializing the Autosuggest SDK. Options are optional unless marked required.
+Configuration is passed when the New Autosuggest SDK is initialized. All options are optional unless marked as required.
 
-Core configuration options authenticate API requests, associate them with the correct Unbxd site, and bind Autosuggest behavior to a search input element. Container, behavior, API, and callback settings allow you to control how and where the suggestion box is rendered, when API calls are triggered, and how to hook into lifecycle events.
+Core options authenticate requests with Unbxd, bind the SDK to a search input, and control the suggestion container, request behavior, API parameters, and lifecycle events.
 
 ---
 
@@ -33,7 +34,7 @@ String
 Required
 {: .label .label-red }
 
-A unique identifier assigned by Unbxd to each site created in the Unbxd Console dashboard. It is required to associate Autosuggest API requests with the correct site. Refer to the [Unbxd documentation](https://docs.netcoreunbxd.com/docs/getting-started) for steps to retrieve the Site Key for your account.
+A unique identifier assigned by Unbxd to each site created in the Unbxd Console dashboard. It is required to associate new Autosuggest SDK API requests with the correct site. Refer to the [Unbxd documentation](https://docs.netcoreunbxd.com/docs/getting-started) for steps to retrieve the Site Key for your account.
 
 ### Default (placeholder)
 
@@ -67,7 +68,7 @@ Object
 Optional
 {: .label .label-blue }
 
-Behavior and performance options that control **when** Autosuggest API calls are triggered and how frequently they are made. These settings help balance responsiveness with performance by reducing unnecessary network requests while maintaining a smooth user experience.
+Behavior and performance options that control **when** new Autosuggest SDK API calls are triggered and how frequently they are made. These settings help balance responsiveness with performance by reducing unnecessary network requests while maintaining a smooth user experience.
 
 ### Default
 
@@ -86,7 +87,7 @@ String | null
 Required
 {: .label .label-red }
 
-Specifies the CSS selector of the input element where Autosuggest should be enabled. The SDK queries the DOM using this selector and attaches autosuggest behavior to the matched element.
+Specifies the CSS selector of the input element where the new Autosuggest SDK should be enabled. The SDK queries the DOM using this selector and attaches autosuggest behavior to the matched element.
 
 ```js
 inputBoxConfigs: {
@@ -107,9 +108,9 @@ Number
 Optional
 {: .label .label-blue }
 
-Specifies the delay (in milliseconds) to wait after the user stops typing before triggering the Autosuggest API call. This helps reduce the number of API requests made during rapid typing.
+Specifies the delay (in milliseconds) to wait after the user stops typing before triggering the new Autosuggest SDK API call. This helps reduce the number of API requests made during rapid typing.
 
-**Note:** A value of `0` disables debouncing, meaning the Autosuggest API will be called on every input change once the `minChars` threshold is met.
+**Note:** A value of `0` disables debouncing, meaning the new Autosuggest SDK API will be called on every input change once the `minChars` threshold is met.
 
 ```js
 inputBoxConfigs: {
@@ -124,9 +125,9 @@ Number
 Optional
 {: .label .label-blue }
 
-Defines the minimum number of characters required in the input field before triggering an Autosuggest API call. This prevents suggestions from being fetched too early and helps improve overall performance.
+Defines the minimum number of characters required in the input field before triggering a new Autosuggest SDK API call. This prevents suggestions from being fetched too early and helps improve overall performance.
 
-**Note:** The Autosuggest API will only be called when the input length is greater than or equal to the specified `minChars` value.
+**Note:** The new Autosuggest SDK API will only be called when the input length is greater than or equal to the specified `minChars` value.
 
 ```js
 inputBoxConfigs: {
@@ -143,7 +144,7 @@ Object
 Optional
 {: .label .label-blue }
 
-Container and DOM configuration options allow you to control **how and where** the Autosuggest container is rendered in the DOM. These settings help align Autosuggest with your application’s markup structure, styling conventions, and testing requirements. You can also provide a custom template to fully override the default UI and render suggestions according to your design and layout requirements.
+Container and DOM configuration options allow you to control **how and where** the new Autosuggest SDK container is rendered in the DOM. These settings help align the new Autosuggest SDK with your application’s markup structure, styling conventions, and testing requirements. You can also provide a custom template to fully override the default UI and render suggestions according to your design and layout requirements.
 
 ### Default
 
@@ -198,37 +199,7 @@ Function | null
 Optional
 {: .label .label-blue }
 
-Defines a custom template function used to render the autosuggestion container. This function receives structured suggestion data as input and must return an HTML string. Providing a custom template completely overrides the default autosuggestion UI.
-
-When not provided, the SDK uses its built-in default template.
-
-```js
-function CustomTemplate(props) {
-  const { query, response } = props;
-  const { popularProducts = [], keywordSuggestions = [], inFields = [],
-         promotedSuggestions = [], topSearchQueries = [], trendingSearches = [] } = response || {};
-  return `<div class="my-suggestions">Custom HTML here</div>`;
-}
-
-const autosuggest = new Autosuggest({
-  suggestionBoxConfigs: {
-    template: CustomTemplate
-  }
-});
-```
-
-#### Template props
-
-The template function receives an object with at least:
-
-- **query** — Current search query string.
-- **response** — Object containing:
-  - **popularProducts** — Array of popular product suggestions.
-  - **inFields** — Array of in-field suggestions based on the user’s current input.
-  - **keywordSuggestions** — Array of keyword-based search suggestions.
-  - **promotedSuggestions** — Array of promoted or sponsored suggestions configured in the Unbxd Console.
-  - **topSearchQueries** — Array of top search queries based on overall user search trends.
-  - **trendingSearches** — Array of trending search suggestions (when available).
+Defines a custom template function used to render the autosuggestion container. For details, examples, and template props, see [Template](configurations/template.html).
 
 ---
 
@@ -239,7 +210,7 @@ Object
 Optional
 {: .label .label-blue }
 
-The API configuration controls how Autosuggest communicates with the Unbxd backend. It allows you to define the API endpoint and fine-tune the **types and number of suggestions** fetched for each autosuggest request. These settings help tailor the autosuggest experience to match business priorities and user behavior.
+The API configuration controls how the new Autosuggest SDK communicates with the Unbxd backend. It allows you to define the API endpoint and fine-tune the **types and number of suggestions** fetched for each request. These settings help tailor the new Autosuggest SDK experience to match business priorities and user behavior.
 
 ### Default
 
@@ -293,7 +264,7 @@ Function
 Optional
 {: .label .label-blue }
 
-The event callback allows you to hook into key lifecycle events of the Autosuggest SDK. This is especially useful for error handling, debugging, logging, and integrating Autosuggest events with analytics or monitoring tools. Callbacks are optional; if not provided, the SDK will function normally using default internal behavior.
+The event callback allows you to hook into key lifecycle events of the new Autosuggest SDK. This is especially useful for error handling, debugging, logging, and integrating new Autosuggest SDK events with analytics or monitoring tools. Callbacks are optional; if not provided, the SDK will function normally using default internal behavior.
 
 The callback is invoked with an object that includes at least **`eventType`**. You can use it to gracefully handle errors or track user actions without breaking the user experience. Common use cases include logging events to the console, reporting to monitoring tools, or displaying fallback UI.
 
@@ -342,7 +313,7 @@ const autosuggest = new Autosuggest({
 
 ## Minimal required configuration
 
-The following configuration represents the minimum setup required to initialize the Autosuggest JS SDK:
+The following configuration represents the minimum setup required to initialize the New Autosuggest SDK:
 
 ```js
 const autosuggest = new Autosuggest({
