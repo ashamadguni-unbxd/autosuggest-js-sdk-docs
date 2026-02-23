@@ -2,8 +2,6 @@ title: Autosuggest JS SDK
 description: JavaScript SDK for Autosuggest by Unbxd
 remote_theme: just-the-docs/just-the-docs
 
-color_scheme: unbxd
-
 url: https://unbxd.github.io
 baseurl: /autosuggest-js-sdk-docs
 
