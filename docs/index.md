@@ -21,7 +21,7 @@ Built with modern JavaScript and designed to work seamlessly **without jQuery or
   </a>
 </div>
 
-{: .important }
+{: .note-title }
 > **IMPORTANT**
 >
 > This documentation is intended for customers using the new version of the Autosuggest JS SDK (V2 integrations).
