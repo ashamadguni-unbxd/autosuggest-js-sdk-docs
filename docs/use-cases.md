@@ -30,7 +30,7 @@ By enabling `initialRequest` and `trendingSearches`, the SDK fetches and display
 
 ---
 
-#### Configuration Overview
+### Configuration Overview
 
 This behavior is achieved using the following API configuration options:
 
