@@ -10,21 +10,6 @@ The following guidelines help ensure optimal performance, reliability, and user 
 
 ---
 
-### Required Fields
-
-The following configuration fields are mandatory and must be provided for the Autosuggest SDK to function correctly:
-
-- **siteKey**  
-  Required for authenticating API requests and associating them with the correct Unbxd site.
-
-- **apiKey**  
-  Required for authenticating API requests initiated by the SDK.
-
-- **searchInput**  
-  Required to bind Autosuggest functionality to a specific input element in the DOM.
-
----
-
 ### Debouncing
 
 Debouncing helps control how frequently Autosuggest API calls are made while the user is typing.
